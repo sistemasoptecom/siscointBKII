@@ -60,13 +60,37 @@ namespace siscointBKII.Controllers
 
         private usuario Authenticate(UserLogin userLogin)
         {
-            
-            var currenUser = _context.usuario.FirstOrDefault(o => o.username.ToLower() == userLogin.Username.ToLower() && o.password == userLogin.Password);
-            if(currenUser == null)
+            var user = new usuario();
+            Boolean EsUsuarioValido = false;
+            try
             {
-                return null;
+                user = _context.usuario.FirstOrDefault(o => o.username == userLogin.Username);
+                string passwordHash = "";
+                if (user != null)
+                    passwordHash = user.pssword;
+
+                passwordHash = General.DesencriptarPassword(passwordHash, userLogin.Password);
+                if (passwordHash != "")
+                {
+                    if(passwordHash.Contains(userLogin.Password))
+                    {
+                        EsUsuarioValido = true;
+                    }
+                }
             }
-            return currenUser;
+            catch (Exception e)
+            {
+
+            }
+
+            //var currenUser = _context.usuario.FirstOrDefault(o => o.username.ToLower() == userLogin.Username.ToLower() && o.pssword == userLogin.Password);
+            //if(currenUser == null)
+            //{
+            //    return null;
+            //}
+            if (!EsUsuarioValido)
+                return null;
+            return user;
 
         }
 
