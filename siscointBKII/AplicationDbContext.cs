@@ -17,6 +17,7 @@ namespace siscointBKII
         {
             modelBuilder.Entity<permisos_usuII>().HasNoKey();
             modelBuilder.Entity<permisos_usuIII>().HasKey(x => x.id_permiso);
+            modelBuilder.Entity<tipo_articulo>().HasKey(x => x.id);
         }
 
 
@@ -27,5 +28,8 @@ namespace siscointBKII
         public DbSet<tipo_usuario> tipo_usuario { get; set; }
         public DbSet<empresa> empresa { get; set; }
         public DbSet<area_ccosto> area_ccosto { get; set; }
+        public DbSet<empleado> empleado { get; set; }
+        public DbSet<tipo_articulo> tipo_articulo { get; set; }
+        public DbSet<objeto> objeto { get; set; }
     }
 }

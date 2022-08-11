@@ -47,13 +47,26 @@ namespace siscointBKII.Controllers
         [Authorize]
         public IActionResult getUsuario([FromBody] usuario user)
         {
+            List<dataBusquedaCompleta> busqueda = new List<dataBusquedaCompleta>();
             var usuarios = _context.usuario.Where(x =>  x.codigo == user.codigo || x.nombre_usuario.Contains(user.nombre_usuario) || x.username == user.username).ToList();
             if (usuarios == null)
                 return null;
 
+            foreach(usuario item in usuarios)
+            {
+                dataBusquedaCompleta busq = new dataBusquedaCompleta();
+                busq.id = item.id;
+                busq.valor1 = item.codigo;
+                busq.valor2 = item.nombre_usuario;
+                busq.valor3 = item.username;
+                busq.valor4 = "";
+                busq.valor5 = "";
+                busqueda.Add(busq);
+            }
+
             //List<usuario> userList = new List<usuario>();
             //userList.Add(usuarios.First());
-            return Ok(usuarios);
+            return Ok(busqueda);
         }
 
         [HttpPost("getUsuarioId")]
