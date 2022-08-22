@@ -25,7 +25,5 @@ namespace siscointBKII.Models
         public Nullable<int> tipo_articulo { get; set; }
         public string cod_articulo { get; set; }
 
-
-
     }
 }

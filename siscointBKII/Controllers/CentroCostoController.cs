@@ -24,7 +24,7 @@ namespace siscointBKII.Controllers
             var dato = new Object();
             try
             {
-                dato = _context.area_ccosto.Where(x => x.id == area_ccostos.id).ToList();
+                dato = _context.area_ccosto.Where(x => x.id == area_ccostos.id || x.ccosto == area_ccostos.ccosto).ToList();
             }
             catch(Exception e)
             {

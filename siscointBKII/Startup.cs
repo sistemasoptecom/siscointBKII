@@ -47,7 +47,13 @@ namespace siscointBKII
             string sqlServerConennection = Configuration.GetConnectionString("conexion");
             //services.AddDbContext<AplicationDbContext>(options => options.UseSqlServer(sqlServerConennection));
             services.AddDbContextPool<AplicationDbContext>(options => options.UseSqlServer(sqlServerConennection));
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                var jsonInputFormatter = options.InputFormatters
+                    .OfType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter>()
+                    .Single();
+                jsonInputFormatter.SupportedMediaTypes.Add("application/csp-report");
+            });
             services.AddRazorPages();
             services.AddCors(options =>
             {

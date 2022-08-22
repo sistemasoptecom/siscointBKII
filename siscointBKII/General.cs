@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using siscointBKII.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,6 +14,7 @@ namespace siscointBKII
 {
     public class General
     {
+       
         public static string EncriptarPassword(string cadenaNombre, string password)
         {
             byte[] bytesToBeEncrypted = Encoding.UTF8.GetBytes(cadenaNombre);
@@ -31,6 +35,8 @@ namespace siscointBKII
             string decryptedResult = Encoding.UTF8.GetString(bytesDecrypted);
             return decryptedResult;
         }
+
+        
 
         private static byte[] AES_Encrypt(byte[] bytesToBeEncrypted, byte[] passwordBytes)
         {
