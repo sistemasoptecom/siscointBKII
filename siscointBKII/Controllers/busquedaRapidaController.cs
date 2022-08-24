@@ -135,6 +135,55 @@ namespace siscointBKII.Controllers
                             }
                             
                             break;
+                        case "ObjetoFijo":
+                            valor = item.valor;
+                            if (valor != "")
+                            {
+                                List<objeto> Objetos = busquedaActivoDisponible(valor);
+                                if(Objetos.Count() > 0)
+                                {
+                                    foreach(objeto i in Objetos)
+                                    {
+                                        dataBusqueda data = new dataBusqueda();
+                                        data.id = i.id;
+                                        data.valor1 = i.af;
+                                        data.valor2 = i.imei;
+                                        data.valor3 = i.descripcion;
+                                        data.valor4 = "";
+                                        data.valor5 = "";
+                                        data.valor6 = "";
+                                        data.valor7 = "";
+                                        data.valor8 = "";
+                                        buscadosS.Add(data);
+                                    }
+                                }
+                            }
+                            break;
+
+                        case "BuscarEmpleado":
+                            valor = item.valor;
+                            if(valor != "")
+                            {
+                                List<empleado> Empleados = busquedaEmpleados(valor);
+                                if(Empleados.Count() > 0)
+                                {
+                                    foreach(empleado i in Empleados)
+                                    {
+                                        dataBusqueda data = new dataBusqueda();
+                                        data.id = i.id;
+                                        data.valor1 = i.cedula_emp;
+                                        data.valor2 = i.nombre;
+                                        data.valor3 = i.snombre;
+                                        data.valor4 = i.ppellido;
+                                        data.valor5 = i.spellido;
+                                        data.valor6 = "";
+                                        data.valor7 = "";
+                                        data.valor8 = "";
+                                        buscadosS.Add(data);
+                                    }
+                                }
+                            }
+                            break;
 
                     }
                 }
@@ -262,6 +311,39 @@ namespace siscointBKII.Controllers
             }
 
             return articulosFijo;
+        }
+        public List<objeto> busquedaActivoDisponible(string valor)
+        {
+            List<objeto> Objetos = new List<objeto>();
+            Objetos = _context.objeto.Where(x => x.af == valor 
+                                            || x.imei == valor 
+                                            || x.descripcion.Contains(valor) 
+                                            && x.estado == 1 
+                                            && x.tipo_articulo == 2).ToList();
+            return Objetos;
+        }
+
+        public List<empleado> busquedaEmpleados(string valor)
+        {
+            List<empleado> Empleados = new List<empleado>();
+            try
+            {
+                Empleados = _context.empleado.Where(x => x.cedula_emp == valor
+                                                    || x.nombre.Contains(valor)
+                                                    || x.snombre.Contains(valor)
+                                                    || x.ppellido.Contains(valor)
+                                                    || x.spellido.Contains(valor)
+                                                    && x.estado == 1).ToList();
+                if(Empleados == null)
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return Empleados;
         }
     }
 }
