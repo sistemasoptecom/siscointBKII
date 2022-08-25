@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Graph;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +57,18 @@ namespace siscointBKII.Controllers
             {
 
             }
+
+            return Ok(data);
+        }
+
+        [HttpPost("AgregarEntrada")]
+        [Authorize]
+        public IActionResult crearEntreda(dynamic json)
+        {
+            var data = new Object();
+            var dataJson = System.Text.Json.JsonSerializer.Serialize(json);
+            //string tipoentrega = Convert.ToString(dataJson["tipoEntrega"]);
+            var datObject = JObject.Parse(dataJson);
 
             return Ok(data);
         }
