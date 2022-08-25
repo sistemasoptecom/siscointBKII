@@ -35,5 +35,9 @@ namespace siscointBKII
         public DbSet<depreciacion> depreciacion { get; set; }
         public DbSet<articulos_af> articulos_af { get; set; }
         public DbSet<jefes> jefes { get; set; }
+        public DbSet<entregas> entregas { get; set; }
+        public DbSet<detalle_entregaII> detalleEntrega { get; set; }
+        public DbSet<devoluciones> devoluciones { get; set; }
+        public DbSet<detalle_devolucionII> detalleDevolucion { get; set; }
     }
 }

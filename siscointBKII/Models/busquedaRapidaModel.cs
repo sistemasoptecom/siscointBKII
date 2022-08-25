@@ -9,5 +9,6 @@ namespace siscointBKII.Models
     {
         public string valor { get; set; }
         public string entidad { get; set; }
+        public string parametro { get; set; }
     }
 }
