@@ -47,6 +47,7 @@ namespace siscointBKII.Controllers
         {
             List<dataBusqueda> buscadosS = new List<dataBusqueda>();
             string valor = "";
+            string parametro = "";
             foreach(busquedaRapidaModel item in abusqueda)
             {
                 var busqueda = new Object();
@@ -137,12 +138,40 @@ namespace siscointBKII.Controllers
                             break;
                         case "ObjetoFijo":
                             valor = item.valor;
+                            parametro = item.parametro;
                             if (valor != "")
                             {
-                                List<objeto> Objetos = busquedaActivoDisponible(valor);
+                                List<objeto> Objetos = busquedaActivoDisponible(valor, parametro);
                                 if(Objetos.Count() > 0)
                                 {
                                     foreach(objeto i in Objetos)
+                                    {
+                                        dataBusqueda data = new dataBusqueda();
+                                        data.id = i.id;
+                                        data.valor1 = i.af;
+                                        data.valor2 = i.imei;
+                                        data.valor3 = i.descripcion;
+                                        data.valor4 = "";
+                                        data.valor5 = "";
+                                        data.valor6 = "";
+                                        data.valor7 = "";
+                                        data.valor8 = "";
+                                        buscadosS.Add(data);
+                                    }
+                                }
+                            }
+                            break;
+
+                        case "ObjetoDevolutivo":
+                            valor = item.valor;
+                            parametro = item.parametro;
+                            if(valor != "")
+                            {
+                                //busquedaDevolitvoDisponible
+                                List<objeto> Objetos = busquedaDevolitvoDisponible(valor, parametro);
+                                if (Objetos.Count() > 0)
+                                {
+                                    foreach (objeto i in Objetos)
                                     {
                                         dataBusqueda data = new dataBusqueda();
                                         data.id = i.id;
@@ -181,6 +210,77 @@ namespace siscointBKII.Controllers
                                         data.valor8 = "";
                                         buscadosS.Add(data);
                                     }
+                                }
+                            }
+                            break;
+                        case "BusquedaProvedor":
+                            valor = item.valor;
+                            if(valor != "")
+                            {
+                                List <busquedaProveedor> proveedors = busquedaProvedores(valor);
+                                if(proveedors.Count() > 0)
+                                {
+                                    foreach(busquedaProveedor i in proveedors)
+                                    {
+                                        dataBusqueda data = new dataBusqueda();
+                                        data.id = i.id;
+                                        data.valor1 = i.nit;
+                                        data.valor2 = i.razon_social;
+                                        data.valor3 = i.contrato;
+                                        data.valor4 = "";
+                                        data.valor5 = "";
+                                        data.valor6 = "";
+                                        data.valor7 = "";
+                                        data.valor8 = "";
+                                        buscadosS.Add(data);
+                                    }
+                                }
+                            }
+                            break;
+                        case "busquedaArticulo":
+                            valor = item.valor;
+                            if (valor != "")
+                            {
+                                List<articulosPedidos> articulos = busquedaArticulosComprasPedidos(valor);
+                                if(articulos.Count() > 0)
+                                {
+                                    foreach(articulosPedidos i in articulos)
+                                    {
+                                        dataBusqueda data = new dataBusqueda();
+                                        data.id = i.Id;
+                                        data.valor1 = i.Codigo+"";
+                                        data.valor2 = i.Descripcion;
+                                        data.valor3 = i.und;
+                                        data.valor4 = i.cuenta;
+                                        data.valor5 = "";
+                                        data.valor6 = "";
+                                        data.valor7 = "";
+                                        data.valor8 = "";
+                                        buscadosS.Add(data);
+                                    }
+                                }
+                            }
+                            break;
+
+                        case "busquedaArticuloArticuloFijo":
+                            valor = item.valor;
+                            
+                            List<articulosPedidos> articulosAF = busquedaArticulosFijoPedido(valor);
+                            if (articulosAF.Count() > 0)
+                            {
+                                foreach (articulosPedidos i in articulosAF)
+                                {
+                                    dataBusqueda data = new dataBusqueda();
+                                    data.id = i.Id;
+                                    data.valor1 = i.Codigo + "";
+                                    data.valor2 = i.Descripcion;
+                                    data.valor3 = i.und;
+                                    data.valor4 = i.cuenta;
+                                    data.valor5 = "";
+                                    data.valor6 = "";
+                                    data.valor7 = "";
+                                    data.valor8 = "";
+                                    buscadosS.Add(data);
                                 }
                             }
                             break;
@@ -312,14 +412,31 @@ namespace siscointBKII.Controllers
 
             return articulosFijo;
         }
-        public List<objeto> busquedaActivoDisponible(string valor)
+        public List<objeto> busquedaActivoDisponible(string valor, string parametro)
         {
+            string param = parametro;
+            int indexOf = parametro.Length;
+            string Estado = parametro.Substring(indexOf-1);
             List<objeto> Objetos = new List<objeto>();
-            Objetos = _context.objeto.Where(x => x.af == valor 
+            Objetos = _context.objeto.Where(x => (x.af == valor 
                                             || x.imei == valor 
-                                            || x.descripcion.Contains(valor) 
-                                            && x.estado == 1 
+                                            || x.descripcion.Contains(valor))
+                                            && x.estado == Convert.ToInt32(Estado) 
                                             && x.tipo_articulo == 2).ToList();
+            return Objetos;
+        }
+
+        public List<objeto> busquedaDevolitvoDisponible(string valor, string parametro)
+        {
+            string param = parametro;
+            int indexOf = parametro.Length;
+            string Estado = parametro.Substring(indexOf - 1);
+            List<objeto> Objetos = new List<objeto>();
+            Objetos = _context.objeto.Where(x => (x.af == valor
+                                            || x.imei == valor
+                                            || x.descripcion.Contains(valor))
+                                            && x.estado == Convert.ToInt32(Estado)
+                                            && x.tipo_articulo == 1).ToList();
             return Objetos;
         }
 
@@ -345,5 +462,129 @@ namespace siscointBKII.Controllers
             }
             return Empleados;
         }
+
+        public List<busquedaProveedor> busquedaProvedores(string valor)
+        {
+            List<busquedaProveedor> proveedores = new List<busquedaProveedor>();
+            string qwery = "";
+            try
+            {
+                qwery = "select dp.id, p.nit, p.razon_social, dp.contrato from proveedorII p \n"+
+                        " inner join detalle_proveedor dp on p.nit = dp.nit \n"+
+                        "where p.razon_social like '%"+valor+"%' or p.nit like '%"+valor+"%' or dp.contrato like '%"+valor+"%' \n"+
+                        "and dp.estado = 1 and p.estado = 1";
+                using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
+                {
+                    using (SqlCommand cmd = new SqlCommand(qwery))
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        using (SqlDataReader srd = cmd.ExecuteReader())
+                        {
+                            while (srd.Read())
+                            {
+                                proveedores.Add(new busquedaProveedor
+                                {
+                                    id = Convert.ToInt32(srd["id"]),
+                                    nit = srd["nit"]+"",
+                                    razon_social = srd["razon_social"]+"",
+                                    contrato = srd["contrato"]+""
+                                });
+                            }
+                        }
+                        con.Close();
+
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                
+            }
+
+            return proveedores;
+        }
+
+        public List<articulosPedidos> busquedaArticulosComprasPedidos(string valor)
+        {
+            List<articulosPedidos> articulos = new List<articulosPedidos>();
+            string query = "";
+            try
+            {
+                query = "select id, codigo, descripcion, und, cuenta from compras_articulos \n"+
+                        "where codigo like '%"+valor+"%' or descripcion like '%"+valor+"%' or und like '%"+valor+"%' or cuenta like '%"+valor+"%' and Estado = 1";
+                using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query))
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        using (SqlDataReader srd = cmd.ExecuteReader())
+                        {
+                            while (srd.Read())
+                            {
+                                articulos.Add(new articulosPedidos
+                                {
+                                    Id = Convert.ToInt32(srd["id"]),
+                                    Codigo = Convert.ToInt32(srd["codigo"]),
+                                    Descripcion = srd["descripcion"]+"",
+                                    und = srd["und"]+"",
+                                    cuenta = srd["cuenta"]+""
+                                });
+                            }
+                        }
+                        con.Close();
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
+            return articulos;
+        }
+
+        public List<articulosPedidos> busquedaArticulosFijoPedido(string valor)
+        {
+            List<articulosPedidos> articulos = new List<articulosPedidos>();
+            string query = "";
+            try
+            {
+                query = "select id, codigo, descripcion, und, cuenta from articulos_af \n"+
+                        "where codigo like '%"+valor+"%' or descripcion like '%"+valor+"%' or und like '%"+valor+"%' or cuenta like '%"+valor+"%' and estado = 1";
+
+                using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query))
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        using (SqlDataReader srd = cmd.ExecuteReader())
+                        {
+                            while (srd.Read())
+                            {
+                                articulos.Add(new articulosPedidos
+                                {
+                                    Id = Convert.ToInt32(srd["id"]),
+                                    Codigo = Convert.ToInt32(srd["codigo"]),
+                                    Descripcion = srd["descripcion"] + "",
+                                    und = srd["und"] + "",
+                                    cuenta = srd["cuenta"] + ""
+                                });
+                            }
+                        }
+                        con.Close();
+                    }
+                }
+
+            }
+            catch(Exception e)
+            {
+
+            }
+            return articulos;
+        }
+
+
     }
 }

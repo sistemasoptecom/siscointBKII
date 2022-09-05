@@ -18,6 +18,8 @@ namespace siscointBKII
             modelBuilder.Entity<permisos_usuII>().HasNoKey();
             modelBuilder.Entity<permisos_usuIII>().HasKey(x => x.id_permiso);
             modelBuilder.Entity<tipo_articulo>().HasKey(x => x.id);
+            modelBuilder.Entity<entregas>().HasKey(x => x.id_ent);
+            modelBuilder.Entity<devoluciones>().HasKey(x => x.id_dev);
         }
 
 
@@ -36,8 +38,13 @@ namespace siscointBKII
         public DbSet<articulos_af> articulos_af { get; set; }
         public DbSet<jefes> jefes { get; set; }
         public DbSet<entregas> entregas { get; set; }
-        public DbSet<detalle_entregaII> detalleEntrega { get; set; }
+        public DbSet<detalle_entregaII> detalle_entregaII { get; set; }
         public DbSet<devoluciones> devoluciones { get; set; }
-        public DbSet<detalle_devolucionII> detalleDevolucion { get; set; }
+        public DbSet<detalle_devolucionII> detalle_devolucionII { get; set; }
+        public DbSet<tipo_reporte> tipo_reporte { get; set; }
+        public DbSet<proveedorII> proveedorII { get; set; }
+        public DbSet<detalle_proveedor> detalle_proveedor { get; set; }
+        public DbSet<compras_articulos> compras_articulos { get; set; }
+        public DbSet<iva> iva { get; set; }
     }
 }

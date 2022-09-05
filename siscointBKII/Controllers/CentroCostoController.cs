@@ -32,5 +32,25 @@ namespace siscointBKII.Controllers
             }
             return Ok(dato);
         }
+
+        [HttpGet("listarCentroCostos")]
+        [Authorize]
+        public IActionResult getListAreaCentroCosto()
+        {
+            var data = new Object();
+            try
+            {
+                data = _context.area_ccosto.ToList();
+                if(data == null)
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return Ok(data);
+        }
     }
 }

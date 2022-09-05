@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Graph;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,9 +18,11 @@ namespace siscointBKII.Controllers
     public class EntradasController : ControllerBase
     {
         private readonly AplicationDbContext _context;
-        public EntradasController(AplicationDbContext context)
+        private readonly IConfiguration _config;
+        public EntradasController(AplicationDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         [HttpGet("ObtenerJefes")]
@@ -78,6 +82,7 @@ namespace siscointBKII.Controllers
                     //se crea una entrega
                     string Entregas = Convert.ToString(datObject["entrega"]);
                     string DetalleEntregas = Convert.ToString(datObject["detalleEntrega"]);
+                    // validar que antes el objeto se encuentre disponible y no entregado
                     jsonResult = CrearEntrega(Entregas, DetalleEntregas);
                 }
                 else if(TipoEntregas.devolucion == "2")
@@ -85,6 +90,7 @@ namespace siscointBKII.Controllers
                     //se crea la devolucion
                     string devolucion = Convert.ToString(datObject["entrega"]);
                     string detalleDevolucion = Convert.ToString(datObject["detalleEntrega"]);
+                    // validar que antes el objeto se encuentre entregado y no disponible
                     jsonResult = CrearDevolucion(devolucion, detalleDevolucion);
                 }
             }
@@ -94,6 +100,91 @@ namespace siscointBKII.Controllers
             }
             
             return Ok(jsonResult);
+        }
+        [HttpPost("listarEntregas")]
+        [Authorize]
+        public IActionResult listarEntregas(dynamic tipo)
+        {
+            //var data = new Object();
+            var data = System.Text.Json.JsonSerializer.Serialize(tipo);
+            var datObejt = JObject.Parse(data);
+            int tipo_articulo = Convert.ToInt32(datObejt["idTipoFormulario"]);
+            int tipo_objeto = Convert.ToInt32(datObejt["idOpcion"]);
+            List<reporte_objetos> rptObj = getQueryListarReportes(tipo_articulo, tipo_objeto);
+            return Ok(rptObj);
+            //return Ok();
+        }
+
+        [HttpGet("listarTipoReporte/{tipo_reporte_page}")]
+        [Authorize]
+        public IActionResult listarTipoReporte(int tipo_reporte_page)
+        {
+            var data = new Object();
+            try
+            {
+                data = _context.tipo_reporte.Where(x => x.tipo_reporte_tabla == tipo_reporte_page).ToList();
+            }
+            catch(Exception e)
+            {
+
+            }
+            return Ok(data);
+        }
+
+        public List<reporte_objetos> getQueryListarReportes(int tipo_articulo, int tipo)
+        {
+            List<reporte_objetos> rptObj = new List<reporte_objetos>();
+            string query = "";
+            string queryConcat = "";
+            try
+            {
+                if(tipo != 0)
+                {
+                    queryConcat = "and tipo = '" + tipo + "'";
+                }
+                query = "select \n"+
+                        "row_number() over(order by o.id desc) AS item, \n"+
+                        "o.descripcion as Descripcion, \n" +
+                         "case o.estado when 0 then 'ENTREGADO' when 1 then 'DISPONIBLE' when 3 then 'BAJA' when 4 then 'HURTO' when 5 then 'REPARACION' else 'NINGUNO' end as Estado, \n"+
+                        "o.estado as EstadoNumber, \n" +
+                        "o.af as AF, o.imei as Imei, \n" +
+                        "concat(emp.nombre, ' ', emp.snombre, ' ', emp.ppellido, ' ', emp.spellido) as usuario, \n" +
+                        "o.id as Id from objeto o \n" +
+                        "left join detalle_entregaII de on o.imei = de.imei_inv \n" +
+                        "left join entregas e on de.id_ent = e.id_ent \n" +
+                        "left join empleado emp on e.ced_empl = emp.cedula_emp \n" +
+                        "where tipo_articulo = '"+tipo_articulo+"' "+queryConcat;
+                using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query))
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        using (SqlDataReader sdr = cmd.ExecuteReader())
+                        {
+                            while (sdr.Read())
+                            {
+                                rptObj.Add(new reporte_objetos
+                                {
+                                    Item = Convert.ToInt64(sdr["item"]),
+                                    Descripcion = sdr["Descripcion"]+"",
+                                    Estado = sdr["Estado"]+"",
+                                    EstadoNumber = Convert.ToInt32(sdr["EstadoNumber"]),
+                                    Af = sdr["AF"]+"",
+                                    Imei = sdr["Imei"]+"",
+                                    usuario = sdr["usuario"]+"",
+                                    Id = Convert.ToInt32(sdr["Id"])
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
+            return rptObj;
         }
 
         public string CrearEntrega(string Entregas, string detalleEntregas)
@@ -109,14 +200,15 @@ namespace siscointBKII.Controllers
                 ResultEntregas = _context.SaveChanges();
                 if(ResultEntregas > 0)
                 {
-                    int id_ent = Convert.ToInt32(_context.entregas.OrderByDescending(x => x.id_ent).First());
+                    entregas entityEntrega = _context.entregas.OrderByDescending(x => x.id_ent).First();
+                    int id_ent = entityEntrega.id_ent;
                     List<detalle_entregaII> detalleEntregasS = JsonConvert.DeserializeObject<List<detalle_entregaII>>(detalleEntregas);
                     foreach(detalle_entregaII det in detalleEntregasS)
                     {
                         try
                         {
                             det.id_ent = id_ent;
-                            _context.detalleEntrega.Add(det);
+                            _context.detalle_entregaII.Add(det);
                            ResultDetalles =  _context.SaveChanges();
                             if(ResultDetalles > 0)
                             {
@@ -170,14 +262,15 @@ namespace siscointBKII.Controllers
                 ResultDevoluciones = _context.SaveChanges();
                 if(ResultDevoluciones > 0)
                 {
-                    int id_dev = Convert.ToInt32(_context.devoluciones.OrderByDescending(x => x.id_dev).First());
+                    devoluciones entityDevolucion = _context.devoluciones.OrderByDescending(x => x.id_dev).First();
+                    int id_dev = entityDevolucion.id_dev;
                     List<detalle_devolucionII> detalleDevolucionesS = JsonConvert.DeserializeObject<List<detalle_devolucionII>>(detalleDevolucion);
                     foreach(detalle_devolucionII det in detalleDevolucionesS)
                     {
                         try
                         {
                             det.id_dev = id_dev;
-                            _context.detalleDevolucion.Add(det);
+                            _context.detalle_devolucionII.Add(det);
                             ResultDetallesDev = _context.SaveChanges();
                             if(ResultDetallesDev > 0)
                             {
