@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace siscointBKII.Controllers
 {
@@ -37,6 +38,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //Aqui en log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message, _config.GetConnectionString("conexion"));
             }
            
             return Ok(viewsPermisos);
@@ -58,6 +63,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(viewsPermisos);
         }
@@ -126,7 +135,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return ViewsPermisos;

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace siscointBKII.Controllers
 {
@@ -320,7 +321,10 @@ namespace siscointBKII.Controllers
                 }
                 catch (Exception e)
                 {
+                    var st = new StackTrace();
+                    var sf = st.GetFrame(1);
 
+                    General.CrearLogError(sf.GetMethod().Name, "dataBusqueda", e.Message, _config.GetConnectionString("conexion"));
                 }
                 
             }
@@ -371,7 +375,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
             }
             return articulosDevolucion;
         }
@@ -438,7 +445,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return articulosFijo;
@@ -489,7 +499,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
             }
             return Empleados;
         }
@@ -530,7 +543,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
-                
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "proveedorII", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return proveedores;
@@ -570,7 +586,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message, _config.GetConnectionString("conexion"));
             }
             return articulos;
         }
@@ -611,7 +630,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message, _config.GetConnectionString("conexion"));
             }
             return articulos;
         }

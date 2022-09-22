@@ -14,6 +14,7 @@ namespace siscointBKII
 {
     public class General
     {
+        
        
         public static string EncriptarPassword(string cadenaNombre, string password)
         {
@@ -102,6 +103,37 @@ namespace siscointBKII
             }
 
             return decryptedBytes;
+        }
+
+        public static void CrearLogError(string tipo, string entidad, string mensaje, string conexion)
+        {
+            using(SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into log_error (entidad, tipo, mensaje, FechaCreacion) values(@entidad, @tipo, @mensaje, @fechacreacion)";
+                    command.Parameters.AddWithValue("@entidad", entidad);
+                    command.Parameters.AddWithValue("@tipo", tipo);
+                    command.Parameters.AddWithValue("@mensaje", mensaje);
+                    command.Parameters.AddWithValue("@fechacreacion", DateTime.Now);
+
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
 
        

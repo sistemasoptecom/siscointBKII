@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 
 namespace siscointBKII.Controllers
 {
@@ -19,12 +21,12 @@ namespace siscointBKII.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly AplicationDbContext _context;
-       
-        
-        public UsuariosController(AplicationDbContext context)
+        private readonly IConfiguration _config;
+
+        public UsuariosController(AplicationDbContext context, IConfiguration config)
         {
             _context = context;
-           
+            _config = config;
         }
         [HttpGet("Usuarios")]
         [Authorize]
@@ -83,6 +85,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(usuarios);
         }
@@ -131,6 +137,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok();
         }
@@ -169,6 +179,10 @@ namespace siscointBKII.Controllers
             catch (Exception e)
             {
                 //logo de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok();
         }

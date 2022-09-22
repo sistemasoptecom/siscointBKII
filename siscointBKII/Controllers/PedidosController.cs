@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -43,7 +44,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "detalle_proveedor", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -68,7 +72,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -93,7 +100,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -113,7 +123,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "directivos", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -136,7 +149,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "pedidos", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return Ok(resultado);

@@ -7,6 +7,7 @@ using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -55,6 +56,10 @@ namespace siscointBKII.Controllers
             catch (Exception e)
             {
                 //log de eventos
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "Objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = ExisteObjeto, Mensaje = mensaje });
             return Ok(json);
@@ -72,7 +77,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -91,7 +99,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -146,6 +157,10 @@ namespace siscointBKII.Controllers
                             catch(Exception e)
                             {
                                 //si hay error hacer un rollback
+                                var st = new StackTrace();
+                                var sf = st.GetFrame(1);
+
+                                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
                             }
                         }
                     }
@@ -172,7 +187,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
             return Ok(json);
@@ -202,7 +220,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
             return Ok(json);
@@ -238,7 +259,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             
             return Ok(busqueda);
@@ -258,7 +282,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -312,7 +339,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
             }
             return articulosFijos;
         }

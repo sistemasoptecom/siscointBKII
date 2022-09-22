@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,12 +18,13 @@ namespace siscointBKII.Controllers
     {
 
         private readonly AplicationDbContext _context;
-
+        private readonly IConfiguration _config;
         public object JavaScriptSerializer { get; private set; }
 
-        public empleadoController(AplicationDbContext context)
+        public empleadoController(AplicationDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
         [HttpGet("getEmpresas")]
         [Authorize]
@@ -86,6 +89,10 @@ namespace siscointBKII.Controllers
             catch (Exception e)
             {
                 //log de registros
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(busqueda);
         }
@@ -103,7 +110,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -152,6 +162,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de errores s
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
             }
 
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
@@ -170,6 +184,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //Log de Errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return EsValido;

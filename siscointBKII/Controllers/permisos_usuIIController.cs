@@ -10,6 +10,8 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Newtonsoft.Json;
 using System.Data;
+using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
 
 namespace siscointBKII.Controllers
 {
@@ -18,9 +20,11 @@ namespace siscointBKII.Controllers
     public class permisos_usuIIController : ControllerBase
     {
         private readonly AplicationDbContext _context;
-        public permisos_usuIIController(AplicationDbContext context)
+        private readonly IConfiguration _config;
+        public permisos_usuIIController(AplicationDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
         [HttpGet("listarPermisos")]
         [Authorize]
@@ -35,6 +39,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de enventos errores del sistemas
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(permisos);
         }
@@ -51,6 +59,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //aqui el log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
             }
             
             return Ok(permisosUsu);
@@ -144,6 +156,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //aqui log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
             }
            
             return Ok();

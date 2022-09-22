@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,9 +15,11 @@ namespace siscointBKII.Controllers
     public class CentroCostoController : ControllerBase
     {
         private readonly AplicationDbContext _context;
-        public CentroCostoController(AplicationDbContext context)
+        private readonly IConfiguration _config;
+        public CentroCostoController(AplicationDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
         [HttpPost("getCentroCosto")]
         [Authorize]
@@ -29,6 +33,10 @@ namespace siscointBKII.Controllers
             catch(Exception e)
             {
                 //log de errores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "area_ccosto", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(dato);
         }
@@ -48,7 +56,10 @@ namespace siscointBKII.Controllers
             }
             catch (Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "area_ccosto", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }

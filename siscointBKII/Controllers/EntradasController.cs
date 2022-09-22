@@ -8,6 +8,7 @@ using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -40,7 +41,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "jefes", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -59,7 +63,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
 
             return Ok(data);
@@ -96,7 +103,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "Entregas", e.Message, _config.GetConnectionString("conexion"));
             }
             
             return Ok(jsonResult);
@@ -126,7 +136,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "tipo_reporte", e.Message, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -182,7 +195,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
             }
             return rptObj;
         }
@@ -242,7 +258,10 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
 
+                General.CrearLogError(sf.GetMethod().Name, "entregas", e.Message, _config.GetConnectionString("conexion"));
             }
             
             data = JsonConvert.SerializeObject(new { Result = ResultEntregas, Mensaje = mensaje });
@@ -304,13 +323,13 @@ namespace siscointBKII.Controllers
             }
             catch(Exception e)
             {
-                
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+
+                General.CrearLogError(sf.GetMethod().Name, "devoluciones", e.Message, _config.GetConnectionString("conexion"));
             }
             data = JsonConvert.SerializeObject(new { Result = ResultDevoluciones, Mensaje = mensaje });
             return data;
         }
-
-
-
     }
 }
