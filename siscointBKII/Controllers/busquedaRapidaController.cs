@@ -86,6 +86,37 @@ namespace siscointBKII.Controllers
                                 }
                             }
                             break;
+                        case "buscarCentroCosto":
+                            List<area_ccosto> area_ccostos_ = new List<area_ccosto>();
+                            valor = item.valor;
+                            if (valor == "%")
+                            {
+                                // busqueda = _context.area_ccosto.ToList();
+                                area_ccostos_ = _context.area_ccosto.ToList(); ;
+                            }
+                            else
+                            {
+                                area_ccostos_ = _context.area_ccosto.Where(x => x.ccosto == Convert.ToInt32(valor) || x.area == valor).ToList();
+                            }
+
+                            if (area_ccostos_.Count() > 0)
+                            {
+                                foreach (area_ccosto i in area_ccostos_)
+                                {
+                                    dataBusqueda data = new dataBusqueda();
+                                    data.id = i.id;
+                                    data.valor1 = i.ccosto + "";
+                                    data.valor2 = i.area;
+                                    data.valor3 = "";
+                                    data.valor4 = "";
+                                    data.valor5 = "";
+                                    data.valor6 = "";
+                                    data.valor7 = "";
+                                    data.valor8 = "";
+                                    buscadosS.Add(data);
+                                }
+                            }
+                            break;
 
                         case "ArticuloDevolutivo":
                             valor = item.valor;

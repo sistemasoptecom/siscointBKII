@@ -46,5 +46,8 @@ namespace siscointBKII
         public DbSet<detalle_proveedor> detalle_proveedor { get; set; }
         public DbSet<compras_articulos> compras_articulos { get; set; }
         public DbSet<iva> iva { get; set; }
+        public DbSet<pedidos> pedidos { get; set; }
+        public DbSet<detalle_pedido> detalle_pedido { get; set; }
+        public DbSet<directivos> directivos { get; set; }
     }
 }
