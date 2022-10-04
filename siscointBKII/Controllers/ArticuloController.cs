@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace siscointBKII.Controllers
@@ -58,8 +59,9 @@ namespace siscointBKII.Controllers
                 //log de eventos
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "Objeto", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "Objeto", e.Message, e.Source, e.StackTrace, methodName, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = ExisteObjeto, Mensaje = mensaje });
             return Ok(json);
@@ -79,8 +81,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -101,8 +104,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -159,8 +163,9 @@ namespace siscointBKII.Controllers
                                 //si hay error hacer un rollback
                                 var st = new StackTrace();
                                 var sf = st.GetFrame(1);
-
-                                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
+                                MethodBase site = e.TargetSite;
+                                string methodName = site == null ? null : site.Name;
+                                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
                             }
                         }
                     }
@@ -189,8 +194,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
             return Ok(json);
@@ -222,8 +228,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
             return Ok(json);
@@ -261,8 +268,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             
             return Ok(busqueda);
@@ -284,8 +292,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "objeto", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -341,8 +350,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return articulosFijos;
         }

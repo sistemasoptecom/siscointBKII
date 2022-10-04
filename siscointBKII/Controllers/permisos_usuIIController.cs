@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Data;
 using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
+using System.Reflection;
 
 namespace siscointBKII.Controllers
 {
@@ -41,8 +42,9 @@ namespace siscointBKII.Controllers
                 //log de enventos errores del sistemas
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(permisos);
         }
@@ -61,8 +63,9 @@ namespace siscointBKII.Controllers
                 //aqui el log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             
             return Ok(permisosUsu);
@@ -158,8 +161,9 @@ namespace siscointBKII.Controllers
                 //aqui log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
            
             return Ok();
