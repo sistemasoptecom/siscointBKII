@@ -1,0 +1,6 @@
+projectKey=siscoint_bk
+serverUrl=http://localhost:9000
+serverVersion=9.7.0.61563
+dashboardUrl=http://localhost:9000/dashboard?id=siscoint_bk
+ceTaskId=AYRY9IFjIkYHFhpk3Xg4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYRY9IFjIkYHFhpk3Xg4

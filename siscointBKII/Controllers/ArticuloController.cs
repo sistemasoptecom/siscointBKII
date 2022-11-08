@@ -308,11 +308,13 @@ namespace siscointBKII.Controllers
                         "FROM depreciacion \n"+
                         "INNER JOIN  articulos_af on depreciacion.cod_art = articulos_af.codigo \n"+
                         "INNER JOIN  pedidos on depreciacion.id_pedido = pedidos.nro_pedido \n"+
-                        "where depreciacion.id = '"+ id + "'";
+                        "where depreciacion.id = @id";
                 using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
                 {
                     using (SqlCommand cmd = new SqlCommand(qwery))
                     {
+                        cmd.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.VarChar));
+                        cmd.Parameters["@id"].Value = id;
                         cmd.Connection = con;
                         con.Open();
                         using (SqlDataReader srd = cmd.ExecuteReader())

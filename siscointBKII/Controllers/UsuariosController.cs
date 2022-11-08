@@ -13,6 +13,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace siscointBKII.Controllers
 {
@@ -94,13 +95,13 @@ namespace siscointBKII.Controllers
         }
 
 
-        [HttpGet("Listar")]
-        [Authorize]
-        public IActionResult Listar()
-        {
-            var usuarios = UsuariosConstantes.user.ToList();
-            return Ok(usuarios);
-        }
+        //[HttpGet("Listar")]
+        //[Authorize]
+        //public IActionResult Listar()
+        //{
+        //    var usuarios = UsuariosConstantes.user.ToList();
+        //    return Ok(usuarios);
+        //}
 
         [HttpGet("ListarUsuarios")]
         public IActionResult listarUsuarios()
@@ -118,7 +119,7 @@ namespace siscointBKII.Controllers
                 string dat = System.Text.Json.JsonSerializer.Serialize(data);
                 usuario usuario = JsonConvert.DeserializeObject<usuario>(dat);
                 string nombreCapa = "mi nombre es " + usuario.nombre_usuario + usuario.pssword;
-                usuario.pssword = General.EncriptarPassword(nombreCapa, usuario.pssword);
+                //usuario.pssword = General.EncriptarPassword(nombreCapa, usuario.pssword);
                 dato = _context.usuario.FirstOrDefault(x => x.codigo == usuario.codigo || x.username == usuario.username);
                 //data = _context.usuario.FirstOrDefault(x => x.codigo == usuarios.codigo || x.username == usuarios.username);
                 if (dato == null)
@@ -158,14 +159,16 @@ namespace siscointBKII.Controllers
                 {
                     return BadRequest();
                 }
-                string nombreCapa = "mi nombre es "+usuarios.nombre_usuario+usuarios.pssword;
+                string _nombre_usuario = usuarios.nombre_usuario;
+                string nombre_usuario = Regex.Replace(_nombre_usuario, @"\s", "");
+                string nombreCapa = "minombrees"+ nombre_usuario + usuarios.pssword;
                 usuario users = new usuario();
                 users.id = usuarios.id;
                 users.codigo = usuarios.codigo;
                 users.nombre_usuario = usuarios.nombre_usuario;
                 users.username = usuarios.username;
                 users.password = usuarios.password;
-                users.pssword = General.EncriptarPassword(nombreCapa, usuarios.pssword);
+                //users.pssword = General.EncriptarPassword(nombreCapa, usuarios.pssword);
                 users.id_tipo_usuario = usuarios.id_tipo_usuario;
                 users.estado = usuarios.estado;
                 users.cargo = usuarios.cargo;

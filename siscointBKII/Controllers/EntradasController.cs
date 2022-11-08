@@ -148,29 +148,49 @@ namespace siscointBKII.Controllers
         {
             List<reporte_objetos> rptObj = new List<reporte_objetos>();
             string query = "";
-            string queryConcat = "";
+            
             try
             {
                 if(tipo != 0)
                 {
-                    queryConcat = "and tipo = '" + tipo + "'";
+                    
+                    query = "select \n" +
+                       "row_number() over(order by o.id desc) AS item, \n" +
+                       "o.descripcion as Descripcion, \n" +
+                        "case o.estado when 0 then 'ENTREGADO' when 1 then 'DISPONIBLE' when 3 then 'BAJA' when 4 then 'HURTO' when 5 then 'REPARACION' else 'NINGUNO' end as Estado, \n" +
+                       "o.estado as EstadoNumber, \n" +
+                       "o.af as AF, o.imei as Imei, \n" +
+                       "concat(emp.nombre, ' ', emp.snombre, ' ', emp.ppellido, ' ', emp.spellido) as usuario, \n" +
+                       "o.id as Id from objeto o \n" +
+                       "left join detalle_entregaII de on o.imei = de.imei_inv \n" +
+                       "left join entregas e on de.id_ent = e.id_ent \n" +
+                       "left join empleado emp on e.ced_empl = emp.cedula_emp \n" +
+                       "where tipo_articulo = @tipo_articulo and tipo = @tipo ";
                 }
-                query = "select \n"+
-                        "row_number() over(order by o.id desc) AS item, \n"+
-                        "o.descripcion as Descripcion, \n" +
-                         "case o.estado when 0 then 'ENTREGADO' when 1 then 'DISPONIBLE' when 3 then 'BAJA' when 4 then 'HURTO' when 5 then 'REPARACION' else 'NINGUNO' end as Estado, \n"+
-                        "o.estado as EstadoNumber, \n" +
-                        "o.af as AF, o.imei as Imei, \n" +
-                        "concat(emp.nombre, ' ', emp.snombre, ' ', emp.ppellido, ' ', emp.spellido) as usuario, \n" +
-                        "o.id as Id from objeto o \n" +
-                        "left join detalle_entregaII de on o.imei = de.imei_inv \n" +
-                        "left join entregas e on de.id_ent = e.id_ent \n" +
-                        "left join empleado emp on e.ced_empl = emp.cedula_emp \n" +
-                        "where tipo_articulo = '"+tipo_articulo+"' "+queryConcat;
+                else
+                {
+                    query = "select \n" +
+                       "row_number() over(order by o.id desc) AS item, \n" +
+                       "o.descripcion as Descripcion, \n" +
+                        "case o.estado when 0 then 'ENTREGADO' when 1 then 'DISPONIBLE' when 3 then 'BAJA' when 4 then 'HURTO' when 5 then 'REPARACION' else 'NINGUNO' end as Estado, \n" +
+                       "o.estado as EstadoNumber, \n" +
+                       "o.af as AF, o.imei as Imei, \n" +
+                       "concat(emp.nombre, ' ', emp.snombre, ' ', emp.ppellido, ' ', emp.spellido) as usuario, \n" +
+                       "o.id as Id from objeto o \n" +
+                       "left join detalle_entregaII de on o.imei = de.imei_inv \n" +
+                       "left join entregas e on de.id_ent = e.id_ent \n" +
+                       "left join empleado emp on e.ced_empl = emp.cedula_emp \n" +
+                       "where tipo_articulo = @tipo_articulo";
+                }
+               
                 using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
                 {
                     using (SqlCommand cmd = new SqlCommand(query))
                     {
+                        cmd.Parameters.Add(new SqlParameter("@tipo", System.Data.SqlDbType.Int));
+                        cmd.Parameters.Add(new SqlParameter("@tipo_articulo", System.Data.SqlDbType.Int));
+                        cmd.Parameters["@tipo"].Value = tipo;
+                        cmd.Parameters["@tipo_articulo"].Value = tipo_articulo;
                         cmd.Connection = con;
                         con.Open();
                         using (SqlDataReader sdr = cmd.ExecuteReader())

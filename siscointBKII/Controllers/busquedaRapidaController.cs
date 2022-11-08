@@ -515,12 +515,14 @@ namespace siscointBKII.Controllers
             {
                 qwery = "select dp.id, p.nit, p.razon_social, dp.contrato from proveedorII p \n"+
                         " inner join detalle_proveedor dp on p.nit = dp.nit \n"+
-                        "where p.razon_social like '%"+valor+"%' or p.nit like '%"+valor+"%' or dp.contrato like '%"+valor+"%' \n"+
+                        "where p.razon_social like '%'+@valor+'%' or p.nit like '%'+@valor+'%' or dp.contrato like '%'+@valor+'%' \n" +
                         "and dp.estado = 1 and p.estado = 1";
                 using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
                 {
                     using (SqlCommand cmd = new SqlCommand(qwery))
                     {
+                        cmd.Parameters.Add(new SqlParameter("@valor", System.Data.SqlDbType.VarChar));
+                        cmd.Parameters["@valor"].Value = valor;
                         cmd.Connection = con;
                         con.Open();
                         using (SqlDataReader srd = cmd.ExecuteReader())
@@ -559,11 +561,13 @@ namespace siscointBKII.Controllers
             try
             {
                 query = "select id, codigo, descripcion, und, cuenta from compras_articulos \n"+
-                        "where codigo like '%"+valor+"%' or descripcion like '%"+valor+"%' or und like '%"+valor+"%' or cuenta like '%"+valor+"%' and Estado = 1";
+                        "where codigo like '%'+@valor+'%' or descripcion like '%'+@valor+'%' or und like '%'+@valor+'%' or cuenta like '%'+@valor+'%' and Estado = 1";
                 using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
                 {
                     using (SqlCommand cmd = new SqlCommand(query))
                     {
+                        cmd.Parameters.Add(new SqlParameter("@valor", System.Data.SqlDbType.VarChar));
+                        cmd.Parameters["@valor"].Value = valor;
                         cmd.Connection = con;
                         con.Open();
                         using (SqlDataReader srd = cmd.ExecuteReader())
@@ -601,12 +605,14 @@ namespace siscointBKII.Controllers
             try
             {
                 query = "select id, codigo, descripcion, und, cuenta from articulos_af \n"+
-                        "where codigo like '%"+valor+"%' or descripcion like '%"+valor+"%' or und like '%"+valor+"%' or cuenta like '%"+valor+"%' and estado = 1";
+                        "where codigo like '%'+@valor+'%' or descripcion like '%'+@valor+'%' or und like '%'+@valor+'%' or cuenta like '%'+@valor+'%' and estado = 1";
 
                 using (SqlConnection con = new SqlConnection(_config.GetConnectionString("conexion")))
                 {
                     using (SqlCommand cmd = new SqlCommand(query))
                     {
+                        cmd.Parameters.Add(new SqlParameter("@valor", System.Data.SqlDbType.VarChar));
+                        cmd.Parameters["@valor"].Value = valor;
                         cmd.Connection = con;
                         con.Open();
                         using (SqlDataReader srd = cmd.ExecuteReader())

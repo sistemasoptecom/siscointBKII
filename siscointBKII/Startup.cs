@@ -57,7 +57,7 @@ namespace siscointBKII
             services.AddRazorPages();
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:4200", "siscointv2.sistemasoptecom.net").AllowAnyMethod().AllowAnyHeader());
             });
         }
 
