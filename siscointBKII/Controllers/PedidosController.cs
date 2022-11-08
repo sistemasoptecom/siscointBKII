@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 
@@ -46,8 +47,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "detalle_proveedor", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "detalle_proveedor", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -74,8 +76,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -102,8 +105,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -125,8 +129,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "directivos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "directivos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(data);
         }
@@ -136,6 +141,7 @@ namespace siscointBKII.Controllers
         public IActionResult agregarTipoPedido(dynamic data)
         {
             string resultado = "";
+            string cadena_conexion = _config.GetConnectionString("conexion");
             try
             {
                 var dataJson = System.Text.Json.JsonSerializer.Serialize(data);
@@ -151,16 +157,18 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "pedidos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "pedidos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
 
             return Ok(resultado);
         }
 
-        public static Boolean CrearPedido(pedidos pedido, List<detalle_pedido> detallePedido, string tipoPedido, AplicationDbContext context, out int numero_pedido)
+        public static Boolean CrearPedido(pedidos pedido, List<detalle_pedido> detallePedido, string tipoPedido, AplicationDbContext context, out int numero_pedido,string cadena_conexion)
         {
             Boolean PedidoCreado = false;
+            int numero_ped = 0;
             //numero_pedido = 0;
             numero_pedido = Convert.ToInt32(PreloadNro_pedido(context));
             if(numero_pedido > 0)
@@ -176,18 +184,31 @@ namespace siscointBKII.Controllers
                         detPedido.id_pedido = numero_pedido;
                         context.detalle_pedido.Add(detPedido);
                         int creoDetallePedido = context.SaveChanges();
-                        if(creoDetallePedido > 0)
-                        {
-                            switch (tipoPedido)
-                            {
-                                case "ARTICULO_FIJO":
-                                    break;
-                                case "DIFERIDO":
-                                    break;
-                            }
-                        }
+                        
                     }
-                   
+
+                    switch (tipoPedido)
+                    {
+                        case "ARTICULO_FIJO":
+                            General.EjecutarProcedimientoAlmacenado_validatePresupuesto("validate_presupuesto_AF", numero_pedido + "", cadena_conexion);
+                            numero_ped = numero_pedido;
+                            var det_ped = context.detalle_pedido.Where(x => x.id_pedido == numero_ped).ToList();
+                            if(det_ped != null)
+                            {
+                                foreach(detalle_pedido idata in det_ped)
+                                {
+                                    General.EjecutarProcedimientoAlmacenado_validateAFDiff("INSERT_DEPRECIACION", cadena_conexion, idata.id_pedido + "", idata.cantidad?? 0, idata.codigo_art);
+                                }
+                            }
+                            break;
+                        case "DIFERIDO":
+                            General.EjecutarProcedimientoAlmacenado_validatePresupuesto("validate_presupuesto", numero_pedido + "", cadena_conexion);
+                            break;
+                        default:
+                            General.EjecutarProcedimientoAlmacenado_validatePresupuesto("validate_presupuesto", numero_pedido + "", cadena_conexion);
+                            break;
+                    }
+
                 }
             }
 

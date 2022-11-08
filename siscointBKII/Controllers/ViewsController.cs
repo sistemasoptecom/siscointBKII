@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace siscointBKII.Controllers
 {
@@ -40,8 +41,9 @@ namespace siscointBKII.Controllers
                 //Aqui en log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "listarPermisos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
            
             return Ok(viewsPermisos);
@@ -65,8 +67,9 @@ namespace siscointBKII.Controllers
                 //log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(viewsPermisos);
         }
@@ -137,8 +140,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "permisos_usuIII", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
 
             return ViewsPermisos;

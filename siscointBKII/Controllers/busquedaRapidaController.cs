@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace siscointBKII.Controllers
 {
@@ -39,6 +40,11 @@ namespace siscointBKII.Controllers
             catch (Exception e)
             {
                 //log Errrores
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "dataBusqueda", e.Message, e.Source, e.StackTrace, methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(buscados);
         }
@@ -323,8 +329,9 @@ namespace siscointBKII.Controllers
                 {
                     var st = new StackTrace();
                     var sf = st.GetFrame(1);
-
-                    General.CrearLogError(sf.GetMethod().Name, "dataBusqueda", e.Message, _config.GetConnectionString("conexion"));
+                    MethodBase site = e.TargetSite;
+                    string methodName = site == null ? null : site.Name;
+                    General.CrearLogError(sf.GetMethod().Name, "dataBusqueda", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
                 }
                 
             }
@@ -377,8 +384,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "articulos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return articulosDevolucion;
         }
@@ -447,8 +455,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "depreciacion", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
 
             return articulosFijo;
@@ -501,8 +510,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Empleados;
         }
@@ -547,8 +557,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "proveedorII", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "proveedorII", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
 
             return proveedores;
@@ -592,8 +603,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "compras_articulos", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return articulos;
         }
@@ -638,8 +650,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "articulos_af", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return articulos;
         }

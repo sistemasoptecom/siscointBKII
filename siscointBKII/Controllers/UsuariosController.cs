@@ -88,8 +88,9 @@ namespace siscointBKII.Controllers
                 //log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok(usuarios);
         }
@@ -140,8 +141,9 @@ namespace siscointBKII.Controllers
                 //log de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok();
         }
@@ -184,8 +186,9 @@ namespace siscointBKII.Controllers
                 //logo de errores
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "usuario", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
             }
             return Ok();
         }

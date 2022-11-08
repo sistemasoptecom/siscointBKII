@@ -332,7 +332,7 @@ namespace siscointBKII
             }
         }
 
-        public static void CrearLogError(string tipo, string entidad, string mensaje, string conexion)
+        public static void CrearLogError(string tipo, string entidad, string mensaje, string source, string stacktrace, string targetsite, string conexion)
         {
             using(SqlConnection connection = new SqlConnection(conexion))
             {
@@ -340,10 +340,13 @@ namespace siscointBKII
                 {
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "insert into log_error (entidad, tipo, mensaje, FechaCreacion) values(@entidad, @tipo, @mensaje, @fechacreacion)";
+                    command.CommandText = "insert into log_error (entidad, tipo, mensaje,source,stacktrace,targetsite, FechaCreacion) values(@entidad, @tipo, @mensaje, @source, @stacktrace, @targetsite ,@fechacreacion)";
                     command.Parameters.AddWithValue("@entidad", entidad);
                     command.Parameters.AddWithValue("@tipo", tipo);
                     command.Parameters.AddWithValue("@mensaje", mensaje);
+                    command.Parameters.AddWithValue("@source", source);
+                    command.Parameters.AddWithValue("@stacktrace", stacktrace);
+                    command.Parameters.AddWithValue("@targetsite", targetsite);
                     command.Parameters.AddWithValue("@fechacreacion", DateTime.Now);
 
                     try
@@ -360,6 +363,33 @@ namespace siscointBKII
                         connection.Close();
                     }
                 }
+            }
+        }
+
+        public static void EjecutarProcedimientoAlmacenado_validatePresupuesto(string nombre_procedimiento, string conexion, string parametro)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                connection.Open();
+                SqlCommand sql_cmnd = new SqlCommand(nombre_procedimiento, connection);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+                sql_cmnd.Parameters.AddWithValue("@nro_ped", SqlDbType.NVarChar).Value = parametro;
+                sql_cmnd.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        public static void EjecutarProcedimientoAlmacenado_validateAFDiff(string nombre_procedimiento, string conexion, string numero_pedido, int cantidad, string cod_articulo)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                connection.Open();
+                SqlCommand sql_cmnd = new SqlCommand(nombre_procedimiento, connection);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+                sql_cmnd.Parameters.AddWithValue("@nro_ped", SqlDbType.NVarChar).Value = numero_pedido;
+                sql_cmnd.Parameters.AddWithValue("@cantidadPedido", SqlDbType.Int).Value = cantidad;
+                sql_cmnd.Parameters.AddWithValue("@codi_articulo", SqlDbType.NVarChar).Value = cod_articulo;
+                connection.Close();
             }
         }
 
