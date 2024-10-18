@@ -1,0 +1,1 @@
+Roslyn version: 3.8.0.0Language version: CSharp8!Concurrent execution: enabled‘ŒFile 'E:\GITEA\siscointBKII\siscointBKII\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs' was recognized as generated~zFile 'E:\GITEA\siscointBKII\siscointBKII\obj\Debug\netcoreapp3.1\siscointBKII.AssemblyInfo.cs' was recognized as generated
