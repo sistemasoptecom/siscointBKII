@@ -17,6 +17,8 @@ namespace siscointBKII.Models
         public int estado { get; set; }
         public string cargo { get; set; }
         public string area { get; set; }
+       
         public Nullable<int> modulo { get; set; }
+        public string correo { get; set; }
     }
 }

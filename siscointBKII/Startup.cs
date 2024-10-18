@@ -42,9 +42,23 @@ namespace siscointBKII
                         ValidAudience = Configuration["Jwt:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
+                })
+                .AddJwtBearer("client2",options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key2"]))
+                    };
                 });
             services.AddMvc();
-            string sqlServerConennection = Configuration.GetConnectionString("conexion");
+            //string sqlServerConennection = Configuration.GetConnectionString("conexion");
+            string sqlServerConennection = Configuration.GetConnectionString("conexionDbPruebas");
             //services.AddDbContext<AplicationDbContext>(options => options.UseSqlServer(sqlServerConennection));
             services.AddDbContextPool<AplicationDbContext>(options => options.UseSqlServer(sqlServerConennection));
             services.AddControllers(options =>
@@ -53,12 +67,26 @@ namespace siscointBKII
                     .OfType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter>()
                     .Single();
                 jsonInputFormatter.SupportedMediaTypes.Add("application/csp-report");
+                jsonInputFormatter.SupportedMediaTypes.Add("application/json");
             });
             services.AddRazorPages();
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:4200", "siscointv2.sistemasoptecom.net").AllowAnyMethod().AllowAnyHeader());
+                //var origin = "http://siscointv2.sistemasoptecom.net";
+                //var origin = "http://localhost:4200";
+                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:4200", 
+                                                                               "http://siscointv2.sistemasoptecom.net", 
+                                                                               "https://siscointv2.sistemasoptecom.net",
+                                                                               "http://sistemasop-001-site8.ctempurl.com",
+                                                                               "https://sistemasop-001-site8.ctempurl.com")
+                                                                  .AllowAnyMethod()
+                                                                  .AllowAnyHeader()
+                                                                  .SetPreflightMaxAge(TimeSpan.FromSeconds(3000)));
             });
+            services.AddControllers();
+
+            services.AddScoped<Interfaces.IRSAHelper, Helpers.RSAHelper>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +111,8 @@ namespace siscointBKII
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
+
+
         }
     }
 }

@@ -34,33 +34,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 39,
-                  "startColumn": 30,
-                  "endLine": 39,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0219",
-          "level": "warning",
-          "message": "La variable 'EsEditar' está asignada pero su valor nunca se usa",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
-                "region": {
-                  "startLine": 154,
-                  "startColumn": 21,
-                  "endLine": 154,
-                  "endColumn": 29
+                  "startLine": 266,
+                  "startColumn": 41,
+                  "endLine": 266,
+                  "endColumn": 42
                 }
               }
             }
@@ -91,18 +70,18 @@
           }
         },
         {
-          "ruleId": "CS0168",
+          "ruleId": "CS0219",
           "level": "warning",
-          "message": "La variable 'e' se ha declarado pero nunca se usa",
+          "message": "La variable 'EsEditar' está asignada pero su valor nunca se usa",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 260,
-                  "startColumn": 41,
-                  "endLine": 260,
-                  "endColumn": 42
+                  "startLine": 157,
+                  "startColumn": 21,
+                  "endLine": 157,
+                  "endColumn": 29
                 }
               }
             }
@@ -120,9 +99,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 325,
+                  "startLine": 332,
                   "startColumn": 41,
-                  "endLine": 325,
+                  "endLine": 332,
                   "endColumn": 42
                 }
               }
@@ -141,9 +120,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
                 "region": {
-                  "startLine": 168,
+                  "startLine": 173,
                   "startColumn": 17,
-                  "endLine": 168,
+                  "endLine": 173,
                   "endColumn": 47
                 }
               }
@@ -162,9 +141,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 64,
+                  "startLine": 70,
                   "startColumn": 32,
-                  "endLine": 64,
+                  "endLine": 70,
                   "endColumn": 76
                 }
               }
@@ -183,10 +162,52 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 95,
+                  "startLine": 101,
                   "startColumn": 33,
-                  "endLine": 95,
+                  "endLine": 101,
                   "endColumn": 77
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 18,
+                  "endLine": 12,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/General.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 18,
+                  "endLine": 16,
+                  "endColumn": 25
                 }
               }
             }
@@ -204,9 +225,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 44,
+                  "startLine": 45,
                   "startColumn": 13,
-                  "endLine": 44,
+                  "endLine": 45,
                   "endColumn": 39
                 }
               }
@@ -225,9 +246,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 64,
                   "startColumn": 13,
-                  "endLine": 63,
+                  "endLine": 64,
                   "endColumn": 41
                 }
               }
@@ -246,9 +267,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 124,
+                  "startLine": 127,
                   "startColumn": 13,
-                  "endLine": 124,
+                  "endLine": 127,
                   "endColumn": 35
                 }
               }
@@ -267,9 +288,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 197,
+                  "startLine": 202,
                   "startColumn": 9,
-                  "endLine": 197,
+                  "endLine": 202,
                   "endColumn": 12
                 }
               }
@@ -288,9 +309,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 83,
+                  "startLine": 86,
                   "startColumn": 17,
-                  "endLine": 83,
+                  "endLine": 86,
                   "endColumn": 82
                 }
               }
@@ -309,9 +330,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 118,
+                  "startLine": 122,
                   "startColumn": 13,
-                  "endLine": 118,
+                  "endLine": 122,
                   "endColumn": 39
                 }
               }
@@ -330,9 +351,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 125,
+                  "startLine": 129,
                   "startColumn": 13,
-                  "endLine": 125,
+                  "endLine": 129,
                   "endColumn": 27
                 }
               }
@@ -351,10 +372,52 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
                 "region": {
-                  "startLine": 332,
+                  "startLine": 339,
                   "startColumn": 25,
-                  "endLine": 332,
+                  "endLine": 339,
                   "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 29,
+                  "endLine": 68,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 17,
+                  "endLine": 77,
+                  "endColumn": 20
                 }
               }
             }
@@ -372,9 +435,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
                 "region": {
-                  "startLine": 55,
+                  "startLine": 56,
                   "startColumn": 21,
-                  "endLine": 55,
+                  "endLine": 56,
                   "endColumn": 105
                 }
               }
@@ -393,9 +456,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
                 "region": {
-                  "startLine": 140,
+                  "startLine": 142,
                   "startColumn": 17,
-                  "endLine": 140,
+                  "endLine": 142,
                   "endColumn": 97
                 }
               }
@@ -414,9 +477,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
                 "region": {
-                  "startLine": 158,
+                  "startLine": 161,
                   "startColumn": 13,
-                  "endLine": 158,
+                  "endLine": 161,
                   "endColumn": 158
                 }
               }
@@ -435,9 +498,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
                 "region": {
-                  "startLine": 164,
+                  "startLine": 172,
                   "startColumn": 13,
-                  "endLine": 164,
+                  "endLine": 172,
                   "endColumn": 33
                 }
               }
@@ -456,9 +519,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
                 "region": {
-                  "startLine": 76,
+                  "startLine": 79,
                   "startColumn": 17,
-                  "endLine": 76,
+                  "endLine": 79,
                   "endColumn": 82
                 }
               }
@@ -477,9 +540,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 38,
+                  "startLine": 39,
                   "startColumn": 13,
-                  "endLine": 38,
+                  "endLine": 39,
                   "endColumn": 102
                 }
               }
@@ -498,9 +561,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 70,
+                  "startLine": 71,
                   "startColumn": 13,
-                  "endLine": 70,
+                  "endLine": 71,
                   "endColumn": 60
                 }
               }
@@ -519,31 +582,10 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 101,
+                  "startLine": 103,
                   "startColumn": 9,
-                  "endLine": 101,
+                  "endLine": 103,
                   "endColumn": 12
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
-                "region": {
-                  "startLine": 122,
-                  "startColumn": 17,
-                  "endLine": 122,
-                  "endColumn": 92
                 }
               }
             }
@@ -564,6 +606,27 @@
                   "startLine": 124,
                   "startColumn": 17,
                   "endLine": 124,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
+                "region": {
+                  "startLine": 126,
+                  "startColumn": 17,
+                  "endLine": 126,
                   "endColumn": 127
                 }
               }
@@ -582,9 +645,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 171,
+                  "startLine": 174,
                   "startColumn": 17,
-                  "endLine": 171,
+                  "endLine": 174,
                   "endColumn": 91
                 }
               }
@@ -603,9 +666,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
                 "region": {
-                  "startLine": 210,
+                  "startLine": 214,
                   "startColumn": 9,
-                  "endLine": 210,
+                  "endLine": 214,
                   "endColumn": 12
                 }
               }
@@ -624,10 +687,52 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
                 "region": {
-                  "startLine": 75,
+                  "startLine": 122,
                   "startColumn": 9,
-                  "endLine": 75,
+                  "endLine": 122,
                   "endColumn": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 13,
+                  "endLine": 185,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 17,
+                  "endLine": 219,
+                  "endColumn": 39
                 }
               }
             }
@@ -679,27 +784,6 @@
           }
         },
         {
-          "ruleId": "S1118",
-          "level": "warning",
-          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Program.cs",
-                "region": {
-                  "startLine": 12,
-                  "startColumn": 18,
-                  "endLine": 12,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S125",
           "level": "warning",
           "message": "Remove this commented out code.",
@@ -742,27 +826,6 @@
           }
         },
         {
-          "ruleId": "S1118",
-          "level": "warning",
-          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/General.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 18,
-                  "endLine": 16,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S101",
           "level": "warning",
           "message": "Rename class 'area_ccosto' to match pascal case naming rules, consider using 'Areaccosto'.",
@@ -786,36 +849,15 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'articulos_af' to match pascal case naming rules, consider using 'Articulosaf'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulos_af.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
           "message": "Rename class 'busquedaRapidaController' to match pascal case naming rules, consider using 'BusquedaRapidaController'.",
           "locations": [
             {
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 19,
+                  "startLine": 20,
                   "startColumn": 18,
-                  "endLine": 19,
+                  "endLine": 20,
                   "endColumn": 42
                 }
               }
@@ -834,10 +876,31 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 17,
+                  "startLine": 18,
                   "startColumn": 18,
-                  "endLine": 17,
+                  "endLine": 18,
                   "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'listar_menu_padre' to match pascal case naming rules, consider using 'Listarmenupadre'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/ModelosQ/listar_menu_padre.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 35
                 }
               }
             }
@@ -870,6 +933,27 @@
         {
           "ruleId": "S101",
           "level": "warning",
+          "message": "Rename class 'articulos_af' to match pascal case naming rules, consider using 'Articulosaf'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulos_af.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
           "message": "Rename class 'articulosBusqueda' to match pascal case naming rules, consider using 'ArticulosBusqueda'.",
           "locations": [
             {
@@ -880,6 +964,27 @@
                   "startColumn": 18,
                   "endLine": 8,
                   "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'articulosBusquedaFijo' to match pascal case naming rules, consider using 'ArticulosBusquedaFijo'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulosBusquedaFijo.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 39
                 }
               }
             }
@@ -933,16 +1038,16 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'articulosBusquedaFijo' to match pascal case naming rules, consider using 'ArticulosBusquedaFijo'.",
+          "message": "Rename class 'compras_articulos' to match pascal case naming rules, consider using 'Comprasarticulos'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulosBusquedaFijo.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/compras_articulos.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
-                  "endColumn": 39
+                  "endColumn": 35
                 }
               }
             }
@@ -964,69 +1069,6 @@
                   "startColumn": 41,
                   "endLine": 18,
                   "endColumn": 48
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'compras_articulos' to match pascal case naming rules, consider using 'Comprasarticulos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/compras_articulos.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'permisos_usuIIController' to match pascal case naming rules, consider using 'PermisosusuIiController'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 18,
-                  "endLine": 20,
-                  "endColumn": 42
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'articulosPedidos' to match pascal case naming rules, consider using 'ArticulosPedidos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulosPedidos.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 34
                 }
               }
             }
@@ -1080,6 +1122,48 @@
         {
           "ruleId": "S101",
           "level": "warning",
+          "message": "Rename class 'articulosPedidos' to match pascal case naming rules, consider using 'ArticulosPedidos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/articulosPedidos.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'permisos_usuIIController' to match pascal case naming rules, consider using 'PermisosusuIiController'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 18,
+                  "endLine": 21,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
           "message": "Rename class 'detalle_pedido' to match pascal case naming rules, consider using 'Detallepedido'.",
           "locations": [
             {
@@ -1099,18 +1183,18 @@
           }
         },
         {
-          "ruleId": "S2933",
+          "ruleId": "S101",
           "level": "warning",
-          "message": "Make '_context' 'readonly'.",
+          "message": "Rename class 'depreciacion' to match pascal case naming rules, consider using 'Depreciacion'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/depreciacion.cs",
                 "region": {
-                  "startLine": 22,
-                  "startColumn": 37,
-                  "endLine": 22,
-                  "endColumn": 45
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 30
                 }
               }
             }
@@ -1120,18 +1204,18 @@
           }
         },
         {
-          "ruleId": "S2933",
+          "ruleId": "S101",
           "level": "warning",
-          "message": "Make '_config' 'readonly'.",
+          "message": "Rename class 'empresa' to match pascal case naming rules, consider using 'Empresa'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/empresa.cs",
                 "region": {
-                  "startLine": 23,
-                  "startColumn": 32,
-                  "endLine": 23,
-                  "endColumn": 39
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 25
                 }
               }
             }
@@ -1162,18 +1246,18 @@
           }
         },
         {
-          "ruleId": "S1104",
+          "ruleId": "S101",
           "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "message": "Rename class 'excel_bco_agrario' to match pascal case naming rules, consider using 'Excelbcoagrario'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/excel_bco_agrario.cs",
                 "region": {
-                  "startLine": 21,
-                  "startColumn": 36,
-                  "endLine": 21,
-                  "endColumn": 72
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 35
                 }
               }
             }
@@ -1185,16 +1269,16 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'empresa' to match pascal case naming rules, consider using 'Empresa'.",
+          "message": "Rename class 'iva' to match pascal case naming rules, consider using 'Iva'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/empresa.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/iva.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
-                  "endColumn": 25
+                  "endColumn": 21
                 }
               }
             }
@@ -1246,18 +1330,18 @@
           }
         },
         {
-          "ruleId": "S4487",
+          "ruleId": "S101",
           "level": "warning",
-          "message": "Remove this unread private field '_logger' or refactor the code to use its value.",
+          "message": "Rename class 'detalle_devolucionII' to match pascal case naming rules, consider using 'DetalledevolucionIi'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/WeatherForecastController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/detalle_devolucionII.cs",
                 "region": {
-                  "startLine": 19,
-                  "startColumn": 61,
-                  "endLine": 19,
-                  "endColumn": 68
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 38
                 }
               }
             }
@@ -1290,37 +1374,16 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'depreciacion' to match pascal case naming rules, consider using 'Depreciacion'.",
+          "message": "Rename class 'reporte_objetos' to match pascal case naming rules, consider using 'Reporteobjetos'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/depreciacion.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/reporte_objetos.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'iva' to match pascal case naming rules, consider using 'Iva'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/iva.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 21
+                  "endColumn": 33
                 }
               }
             }
@@ -1353,27 +1416,6 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'reporte_objetos' to match pascal case naming rules, consider using 'Reporteobjetos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/reporte_objetos.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
           "message": "Rename class 'tipoEntrega' to match pascal case naming rules, consider using 'TipoEntrega'.",
           "locations": [
             {
@@ -1395,100 +1437,16 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'permisos_usuIII' to match pascal case naming rules, consider using 'PermisosusuIii'.",
+          "message": "Rename class 'detalle_entregaII' to match pascal case naming rules, consider using 'DetalleentregaIi'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/permisos_usuIII.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 18,
-                  "endLine": 9,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'tipo_usuario' to match pascal case naming rules, consider using 'Tipousuario'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_usuario.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/detalle_entregaII.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'detalle_devolucionII' to match pascal case naming rules, consider using 'DetalledevolucionIi'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/detalle_devolucionII.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'empleado' to match pascal case naming rules, consider using 'Empleado'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/empleado.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 26
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'tipo_articulo' to match pascal case naming rules, consider using 'Tipoarticulo'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_articulo.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 31
+                  "endColumn": 35
                 }
               }
             }
@@ -1521,16 +1479,58 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'tipo_reporte' to match pascal case naming rules, consider using 'Tiporeporte'.",
+          "message": "Rename class 'tipo_articulo' to match pascal case naming rules, consider using 'Tipoarticulo'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_reporte.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_articulo.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'tipo_usuario' to match pascal case naming rules, consider using 'Tipousuario'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_usuario.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
                   "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'empleado' to match pascal case naming rules, consider using 'Empleado'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/empleado.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 26
                 }
               }
             }
@@ -1563,58 +1563,16 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'proveedorII' to match pascal case naming rules, consider using 'ProveedorIi'.",
+          "message": "Rename class 'tipo_reporte' to match pascal case naming rules, consider using 'Tiporeporte'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/proveedorII.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tipo_reporte.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 18,
                   "endLine": 8,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'viewsPermisos' to match pascal case naming rules, consider using 'ViewsPermisos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/viewsPermisos.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'detalle_entregaII' to match pascal case naming rules, consider using 'DetalleentregaIi'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/detalle_entregaII.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 35
+                  "endColumn": 30
                 }
               }
             }
@@ -1668,6 +1626,90 @@
         {
           "ruleId": "S101",
           "level": "warning",
+          "message": "Rename class 'tmp_excel_bco_agrario' to match pascal case naming rules, consider using 'Tmpexcelbcoagrario'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/tmp_excel_bco_agrario.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'permisos_usuIII' to match pascal case naming rules, consider using 'PermisosusuIii'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/permisos_usuIII.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 18,
+                  "endLine": 9,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4487",
+          "level": "warning",
+          "message": "Remove this unread private field '_logger' or refactor the code to use its value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/WeatherForecastController.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 61,
+                  "endLine": 19,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 36,
+                  "endLine": 22,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
           "message": "Rename class 'views' to match pascal case naming rules, consider using 'Views'.",
           "locations": [
             {
@@ -1687,6 +1729,90 @@
           }
         },
         {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_context' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 37,
+                  "endLine": 23,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_config' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 32,
+                  "endLine": 24,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'proveedorII' to match pascal case naming rules, consider using 'ProveedorIi'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/proveedorII.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'viewsPermisos' to match pascal case naming rules, consider using 'ViewsPermisos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Models/viewsPermisos.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S108",
           "level": "warning",
           "message": "Either remove or fill this block of code.",
@@ -1695,9 +1821,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/General.cs",
                 "region": {
-                  "startLine": 355,
+                  "startLine": 358,
                   "startColumn": 21,
-                  "endLine": 357,
+                  "endLine": 360,
                   "endColumn": 22
                 }
               }
@@ -1716,9 +1842,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/General.cs",
                 "region": {
-                  "startLine": 352,
+                  "startLine": 355,
                   "startColumn": 29,
-                  "endLine": 352,
+                  "endLine": 355,
                   "endColumn": 44
                 }
               }
@@ -1729,24 +1855,221 @@
           }
         },
         {
-          "ruleId": "S1481",
+          "ruleId": "S2077",
           "level": "warning",
-          "message": "Remove the unused local variable 'usuariospermiso'.",
+          "message": "Make sure using a dynamically formatted SQL query is safe here.",
           "locations": [
             {
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
                 "region": {
-                  "startLine": 94,
-                  "startColumn": 17,
-                  "endLine": 94,
-                  "endColumn": 32
+                  "startLine": 151,
+                  "startColumn": 48,
+                  "endLine": 151,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 21,
+                  "endLine": 147,
+                  "endColumn": 26
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 1
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "SQL Query is dynamically formatted and assigned to query."
+            }
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 30,
+                  "endLine": 128,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 137,
+                  "startColumn": 17,
+                  "endLine": 137,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 17,
+                  "endLine": 144,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 21,
+                  "endLine": 146,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 25,
+                  "endLine": 149,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 29,
+                  "endLine": 161,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 167,
+                  "startColumn": 66,
+                  "endLine": 167,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 17,
+                  "endLine": 175,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 32,
+                  "endLine": 175,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 17,
+                  "endLine": 180,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 21,
+                  "endLine": 182,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 21,
+                  "endLine": 186,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 13,
+                  "endLine": 193,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "region": {
+                  "startLine": 198,
+                  "startColumn": 50,
+                  "endLine": 198,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+1",
+              "11": "+1",
+              "12": "+2 (incl 1 for nesting)",
+              "2": "+2 (incl 1 for nesting)",
+              "3": "+3 (incl 2 for nesting)",
+              "4": "+4 (incl 3 for nesting)",
+              "5": "+5 (incl 4 for nesting)",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+2 (incl 1 for nesting)"
+            }
           }
         },
         {
@@ -1758,9 +2081,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/empleadoController.cs",
                 "region": {
-                  "startLine": 132,
+                  "startLine": 135,
                   "startColumn": 13,
-                  "endLine": 132,
+                  "endLine": 135,
                   "endColumn": 14
                 }
               }
@@ -1779,9 +2102,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
                 "region": {
-                  "startLine": 142,
+                  "startLine": 146,
                   "startColumn": 21,
-                  "endLine": 142,
+                  "endLine": 146,
                   "endColumn": 23
                 }
               }
@@ -1791,44 +2114,10 @@
             {
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 140,
-                  "startColumn": 17,
-                  "endLine": 140,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1066",
-          "level": "warning",
-          "message": "Merge this if statement with the enclosing one.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
                 "region": {
                   "startLine": 144,
-                  "startColumn": 21,
+                  "startColumn": 17,
                   "endLine": 144,
-                  "endColumn": 23
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
-                "region": {
-                  "startLine": 142,
-                  "startColumn": 17,
-                  "endLine": 142,
                   "endColumn": 19
                 }
               }
@@ -1839,683 +2128,38 @@
           }
         },
         {
-          "ruleId": "S3776",
+          "ruleId": "S2971",
           "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+          "message": "Use 'Count' property here instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 124,
-                  "startColumn": 30,
-                  "endLine": 124,
-                  "endColumn": 43
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 133,
-                  "startColumn": 17,
-                  "endLine": 133,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 140,
-                  "startColumn": 17,
-                  "endLine": 140,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 142,
-                  "startColumn": 21,
-                  "endLine": 142,
-                  "endColumn": 23
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 145,
-                  "startColumn": 25,
-                  "endLine": 145,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 157,
-                  "startColumn": 29,
-                  "endLine": 157,
-                  "endColumn": 34
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 170,
-                  "startColumn": 17,
-                  "endLine": 170,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 170,
-                  "startColumn": 32,
-                  "endLine": 170,
-                  "endColumn": 34
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 175,
-                  "startColumn": 17,
-                  "endLine": 175,
-                  "endColumn": 21
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 177,
-                  "startColumn": 21,
-                  "endLine": 177,
-                  "endColumn": 23
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 181,
-                  "startColumn": 21,
-                  "endLine": 181,
-                  "endColumn": 25
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ArticuloController.cs",
-                "region": {
-                  "startLine": 188,
-                  "startColumn": 13,
-                  "endLine": 188,
-                  "endColumn": 18
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "+1",
-              "1": "+1",
-              "10": "+1",
-              "2": "+2 (incl 1 for nesting)",
-              "3": "+3 (incl 2 for nesting)",
-              "4": "+4 (incl 3 for nesting)",
-              "5": "+1",
-              "6": "+1",
-              "7": "+1",
-              "8": "+2 (incl 1 for nesting)",
-              "9": "+1"
-            }
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'nombreCapa'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
-                "region": {
-                  "startLine": 121,
-                  "startColumn": 24,
-                  "endLine": 121,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2486",
-          "level": "warning",
-          "message": "Handle the exception or explain in a comment why it can be ignored.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosConreoller.cs",
-                "region": {
-                  "startLine": 41,
-                  "startColumn": 13,
-                  "endLine": 44,
-                  "endColumn": 14
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S108",
-          "level": "warning",
-          "message": "Either remove or fill this block of code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosConreoller.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 13,
-                  "endLine": 44,
-                  "endColumn": 14
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'EsEditar'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
-                "region": {
-                  "startLine": 154,
-                  "startColumn": 21,
-                  "endLine": 154,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'nombreCapa'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
-                "region": {
-                  "startLine": 164,
-                  "startColumn": 24,
-                  "endLine": 164,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3776",
-          "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 72,
-                  "startColumn": 30,
-                  "endLine": 72,
+                  "startLine": 78,
+                  "startColumn": 45,
+                  "endLine": 78,
                   "endColumn": 50
                 }
               }
             }
           ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 79,
-                  "startColumn": 17,
-                  "endLine": 79,
-                  "endColumn": 24
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 106,
-                  "endLine": 81,
-                  "endColumn": 108
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 83,
-                  "startColumn": 21,
-                  "endLine": 83,
-                  "endColumn": 23
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 85,
-                  "startColumn": 25,
-                  "endLine": 85,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 89,
-                  "startColumn": 25,
-                  "endLine": 89,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 93,
-                  "startColumn": 25,
-                  "endLine": 93,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 97,
-                  "startColumn": 25,
-                  "endLine": 97,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 101,
-                  "startColumn": 25,
-                  "endLine": 101,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 105,
-                  "startColumn": 25,
-                  "endLine": 105,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 113,
-                  "startColumn": 21,
-                  "endLine": 113,
-                  "endColumn": 25
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 121,
-                  "startColumn": 25,
-                  "endLine": 121,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 125,
-                  "startColumn": 25,
-                  "endLine": 125,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 129,
-                  "startColumn": 25,
-                  "endLine": 129,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 133,
-                  "startColumn": 25,
-                  "endLine": 133,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 137,
-                  "startColumn": 25,
-                  "endLine": 137,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 141,
-                  "startColumn": 25,
-                  "endLine": 141,
-                  "endColumn": 29
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
-                "region": {
-                  "startLine": 156,
-                  "startColumn": 13,
-                  "endLine": 156,
-                  "endColumn": 18
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "+1",
-              "1": "+1",
-              "10": "+3 (incl 2 for nesting)",
-              "11": "+1",
-              "12": "+3 (incl 2 for nesting)",
-              "13": "+1",
-              "14": "+3 (incl 2 for nesting)",
-              "15": "+1",
-              "16": "+1",
-              "2": "+2 (incl 1 for nesting)",
-              "3": "+3 (incl 2 for nesting)",
-              "4": "+1",
-              "5": "+3 (incl 2 for nesting)",
-              "6": "+1",
-              "7": "+3 (incl 2 for nesting)",
-              "8": "+1",
-              "9": "+1"
-            }
-          }
-        },
-        {
-          "ruleId": "S3776",
-          "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 226,
-                  "startColumn": 23,
-                  "endLine": 226,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 237,
-                  "startColumn": 17,
-                  "endLine": 237,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 242,
-                  "startColumn": 21,
-                  "endLine": 242,
-                  "endColumn": 28
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 249,
-                  "startColumn": 29,
-                  "endLine": 249,
-                  "endColumn": 31
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 252,
-                  "startColumn": 33,
-                  "endLine": 252,
-                  "endColumn": 35
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 260,
-                  "startColumn": 25,
-                  "endLine": 260,
-                  "endColumn": 30
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 270,
-                  "startColumn": 17,
-                  "endLine": 270,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 270,
-                  "startColumn": 40,
-                  "endLine": 270,
-                  "endColumn": 42
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 274,
-                  "startColumn": 17,
-                  "endLine": 274,
-                  "endColumn": 21
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 279,
-                  "startColumn": 13,
-                  "endLine": 279,
-                  "endColumn": 18
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "+1",
-              "1": "+2 (incl 1 for nesting)",
-              "2": "+3 (incl 2 for nesting)",
-              "3": "+4 (incl 3 for nesting)",
-              "4": "+3 (incl 2 for nesting)",
-              "5": "+1",
-              "6": "+1",
-              "7": "+1",
-              "8": "+1"
-            }
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'tipoPedido'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
-                "region": {
-                  "startLine": 143,
-                  "startColumn": 24,
-                  "endLine": 143,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
           "properties": {
             "warningLevel": 1
           }
         },
         {
-          "ruleId": "S1481",
+          "ruleId": "S2971",
           "level": "warning",
-          "message": "Remove the unused local variable 'pedidosAdd'.",
+          "message": "Use 'Count' property here instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 147,
-                  "startColumn": 25,
-                  "endLine": 147,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'detallePedidos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
-                "region": {
-                  "startLine": 148,
-                  "startColumn": 38,
-                  "endLine": 148,
+                  "startLine": 109,
+                  "startColumn": 47,
+                  "endLine": 109,
                   "endColumn": 52
                 }
               }
@@ -2526,297 +2170,164 @@
           }
         },
         {
-          "ruleId": "S3776",
+          "ruleId": "S2971",
           "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+          "message": "Use 'Count' property here instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 291,
-                  "startColumn": 23,
-                  "endLine": 291,
-                  "endColumn": 38
+                  "startLine": 133,
+                  "startColumn": 56,
+                  "endLine": 133,
+                  "endColumn": 61
                 }
               }
             }
           ],
-          "relatedLocations": [
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
             {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 302,
-                  "startColumn": 17,
-                  "endLine": 302,
-                  "endColumn": 19
+                  "startLine": 157,
+                  "startColumn": 56,
+                  "endLine": 157,
+                  "endColumn": 61
                 }
               }
-            },
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
             {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 183,
+                  "startColumn": 44,
+                  "endLine": 183,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 210,
+                  "startColumn": 45,
+                  "endLine": 210,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 235,
+                  "startColumn": 46,
+                  "endLine": 235,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 47,
+                  "endLine": 259,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 283,
+                  "startColumn": 46,
+                  "endLine": 283,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
                   "startLine": 307,
-                  "startColumn": 21,
-                  "endLine": 307,
-                  "endColumn": 28
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 314,
-                  "startColumn": 29,
-                  "endLine": 314,
-                  "endColumn": 31
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 317,
-                  "startColumn": 33,
-                  "endLine": 317,
-                  "endColumn": 35
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 325,
-                  "startColumn": 25,
-                  "endLine": 325,
-                  "endColumn": 30
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 335,
-                  "startColumn": 17,
-                  "endLine": 335,
-                  "endColumn": 19
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 335,
-                  "startColumn": 44,
-                  "endLine": 335,
-                  "endColumn": 46
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 339,
-                  "startColumn": 17,
-                  "endLine": 339,
-                  "endColumn": 21
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
-                "region": {
-                  "startLine": 344,
-                  "startColumn": 13,
-                  "endLine": 344,
-                  "endColumn": 18
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "+1",
-              "1": "+2 (incl 1 for nesting)",
-              "2": "+3 (incl 2 for nesting)",
-              "3": "+4 (incl 3 for nesting)",
-              "4": "+3 (incl 2 for nesting)",
-              "5": "+1",
-              "6": "+1",
-              "7": "+1",
-              "8": "+1"
-            }
-          }
-        },
-        {
-          "ruleId": "S1168",
-          "level": "warning",
-          "message": "Return an empty collection instead of null.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 497,
-                  "startColumn": 21,
-                  "endLine": 497,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1854",
-          "level": "warning",
-          "message": "Remove this useless assignment to local variable 'Objetos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 461,
-                  "startColumn": 26,
-                  "endLine": 461,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'param'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 458,
-                  "startColumn": 20,
-                  "endLine": 458,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1854",
-          "level": "warning",
-          "message": "Remove this useless assignment to local variable 'Objetos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 475,
-                  "startColumn": 26,
-                  "endLine": 475,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'param'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 472,
-                  "startColumn": 20,
-                  "endLine": 472,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1854",
-          "level": "warning",
-          "message": "Remove this useless assignment to local variable 'area_ccostos'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 60,
-                  "startColumn": 47,
-                  "endLine": 60,
-                  "endColumn": 85
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1854",
-          "level": "warning",
-          "message": "Remove this useless assignment to local variable 'area_ccostos_'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 91,
-                  "startColumn": 47,
-                  "endLine": 91,
-                  "endColumn": 86
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1155",
-          "level": "warning",
-          "message": "Use '.Any()' to test whether this 'IEnumerable<siscointBKII.Models.area_ccosto>' is empty or not.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 72,
                   "startColumn": 45,
-                  "endLine": 72,
+                  "endLine": 307,
                   "endColumn": 50
                 }
               }
@@ -2835,9 +2346,30 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 103,
+                  "startLine": 78,
+                  "startColumn": 45,
+                  "endLine": 78,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1155",
+          "level": "warning",
+          "message": "Use '.Any()' to test whether this 'IEnumerable<siscointBKII.Models.area_ccosto>' is empty or not.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 109,
                   "startColumn": 47,
-                  "endLine": 103,
+                  "endLine": 109,
                   "endColumn": 52
                 }
               }
@@ -2856,9 +2388,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 127,
+                  "startLine": 133,
                   "startColumn": 56,
-                  "endLine": 127,
+                  "endLine": 133,
                   "endColumn": 61
                 }
               }
@@ -2877,9 +2409,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 151,
+                  "startLine": 157,
                   "startColumn": 56,
-                  "endLine": 151,
+                  "endLine": 157,
                   "endColumn": 61
                 }
               }
@@ -2898,9 +2430,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 177,
+                  "startLine": 183,
                   "startColumn": 44,
-                  "endLine": 177,
+                  "endLine": 183,
                   "endColumn": 49
                 }
               }
@@ -2919,9 +2451,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 204,
+                  "startLine": 210,
                   "startColumn": 45,
-                  "endLine": 204,
+                  "endLine": 210,
                   "endColumn": 50
                 }
               }
@@ -2940,9 +2472,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 229,
+                  "startLine": 235,
                   "startColumn": 46,
-                  "endLine": 229,
+                  "endLine": 235,
                   "endColumn": 51
                 }
               }
@@ -2961,9 +2493,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 253,
+                  "startLine": 259,
                   "startColumn": 47,
-                  "endLine": 253,
+                  "endLine": 259,
                   "endColumn": 52
                 }
               }
@@ -2982,9 +2514,9 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 277,
+                  "startLine": 283,
                   "startColumn": 46,
-                  "endLine": 277,
+                  "endLine": 283,
                   "endColumn": 51
                 }
               }
@@ -3003,262 +2535,10 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 301,
+                  "startLine": 307,
                   "startColumn": 45,
-                  "endLine": 301,
+                  "endLine": 307,
                   "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 72,
-                  "startColumn": 45,
-                  "endLine": 72,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 103,
-                  "startColumn": 47,
-                  "endLine": 103,
-                  "endColumn": 52
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 127,
-                  "startColumn": 56,
-                  "endLine": 127,
-                  "endColumn": 61
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 151,
-                  "startColumn": 56,
-                  "endLine": 151,
-                  "endColumn": 61
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 177,
-                  "startColumn": 44,
-                  "endLine": 177,
-                  "endColumn": 49
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 204,
-                  "startColumn": 45,
-                  "endLine": 204,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 229,
-                  "startColumn": 46,
-                  "endLine": 229,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 253,
-                  "startColumn": 47,
-                  "endLine": 253,
-                  "endColumn": 52
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 277,
-                  "startColumn": 46,
-                  "endLine": 277,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2971",
-          "level": "warning",
-          "message": "Use 'Count' property here instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 301,
-                  "startColumn": 45,
-                  "endLine": 301,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1116",
-          "level": "warning",
-          "message": "Remove this empty statement.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 65,
-                  "startColumn": 79,
-                  "endLine": 65,
-                  "endColumn": 80
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1116",
-          "level": "warning",
-          "message": "Remove this empty statement.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 96,
-                  "startColumn": 80,
-                  "endLine": 96,
-                  "endColumn": 81
                 }
               }
             }
@@ -3270,15 +2550,15 @@
         {
           "ruleId": "S3776",
           "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 120 to the 15 allowed.",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 123 to the 15 allowed.",
           "locations": [
             {
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 47,
+                  "startLine": 53,
                   "startColumn": 37,
-                  "endLine": 47,
+                  "endLine": 53,
                   "endColumn": 57
                 }
               }
@@ -3289,9 +2569,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 52,
+                  "startLine": 58,
                   "startColumn": 13,
-                  "endLine": 52,
+                  "endLine": 58,
                   "endColumn": 20
                 }
               }
@@ -3300,9 +2580,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 57,
+                  "startLine": 63,
                   "startColumn": 21,
-                  "endLine": 57,
+                  "endLine": 63,
                   "endColumn": 27
                 }
               }
@@ -3311,9 +2591,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 62,
+                  "startLine": 68,
                   "startColumn": 29,
-                  "endLine": 62,
+                  "endLine": 68,
                   "endColumn": 31
                 }
               }
@@ -3322,9 +2602,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 67,
+                  "startLine": 73,
                   "startColumn": 29,
-                  "endLine": 67,
+                  "endLine": 73,
                   "endColumn": 33
                 }
               }
@@ -3333,9 +2613,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 69,
+                  "startLine": 75,
                   "startColumn": 115,
-                  "endLine": 69,
+                  "endLine": 75,
                   "endColumn": 117
                 }
               }
@@ -3344,9 +2624,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 72,
+                  "startLine": 78,
                   "startColumn": 29,
-                  "endLine": 72,
+                  "endLine": 78,
                   "endColumn": 31
                 }
               }
@@ -3355,9 +2635,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 74,
+                  "startLine": 80,
                   "startColumn": 33,
-                  "endLine": 74,
+                  "endLine": 80,
                   "endColumn": 40
                 }
               }
@@ -3366,9 +2646,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 93,
+                  "startLine": 99,
                   "startColumn": 29,
-                  "endLine": 93,
+                  "endLine": 99,
                   "endColumn": 31
                 }
               }
@@ -3377,9 +2657,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 98,
+                  "startLine": 104,
                   "startColumn": 29,
-                  "endLine": 98,
+                  "endLine": 104,
                   "endColumn": 33
                 }
               }
@@ -3388,9 +2668,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 100,
+                  "startLine": 106,
                   "startColumn": 116,
-                  "endLine": 100,
+                  "endLine": 106,
                   "endColumn": 118
                 }
               }
@@ -3399,9 +2679,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 103,
+                  "startLine": 109,
                   "startColumn": 29,
-                  "endLine": 103,
+                  "endLine": 109,
                   "endColumn": 31
                 }
               }
@@ -3410,9 +2690,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 105,
+                  "startLine": 111,
                   "startColumn": 33,
-                  "endLine": 105,
+                  "endLine": 111,
                   "endColumn": 40
                 }
               }
@@ -3421,9 +2701,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 124,
+                  "startLine": 130,
                   "startColumn": 29,
-                  "endLine": 124,
+                  "endLine": 130,
                   "endColumn": 31
                 }
               }
@@ -3432,9 +2712,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 127,
+                  "startLine": 133,
                   "startColumn": 33,
-                  "endLine": 127,
+                  "endLine": 133,
                   "endColumn": 35
                 }
               }
@@ -3443,9 +2723,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 129,
+                  "startLine": 135,
                   "startColumn": 36,
-                  "endLine": 129,
+                  "endLine": 135,
                   "endColumn": 43
                 }
               }
@@ -3454,9 +2734,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 148,
+                  "startLine": 154,
                   "startColumn": 29,
-                  "endLine": 148,
+                  "endLine": 154,
                   "endColumn": 31
                 }
               }
@@ -3465,9 +2745,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 151,
+                  "startLine": 157,
                   "startColumn": 33,
-                  "endLine": 151,
+                  "endLine": 157,
                   "endColumn": 35
                 }
               }
@@ -3476,9 +2756,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 153,
+                  "startLine": 159,
                   "startColumn": 37,
-                  "endLine": 153,
+                  "endLine": 159,
                   "endColumn": 44
                 }
               }
@@ -3487,9 +2767,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 174,
+                  "startLine": 180,
                   "startColumn": 29,
-                  "endLine": 174,
+                  "endLine": 180,
                   "endColumn": 31
                 }
               }
@@ -3498,9 +2778,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 177,
+                  "startLine": 183,
                   "startColumn": 33,
-                  "endLine": 177,
+                  "endLine": 183,
                   "endColumn": 35
                 }
               }
@@ -3509,32 +2789,10 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 179,
+                  "startLine": 185,
                   "startColumn": 37,
-                  "endLine": 179,
+                  "endLine": 185,
                   "endColumn": 44
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 200,
-                  "startColumn": 29,
-                  "endLine": 200,
-                  "endColumn": 31
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 204,
-                  "startColumn": 33,
-                  "endLine": 204,
-                  "endColumn": 35
                 }
               }
             },
@@ -3543,19 +2801,8 @@
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
                   "startLine": 206,
-                  "startColumn": 37,
+                  "startColumn": 29,
                   "endLine": 206,
-                  "endColumn": 44
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
-                "region": {
-                  "startLine": 226,
-                  "startColumn": 29,
-                  "endLine": 226,
                   "endColumn": 31
                 }
               }
@@ -3564,9 +2811,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 229,
+                  "startLine": 210,
                   "startColumn": 33,
-                  "endLine": 229,
+                  "endLine": 210,
                   "endColumn": 35
                 }
               }
@@ -3575,9 +2822,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 231,
+                  "startLine": 212,
                   "startColumn": 37,
-                  "endLine": 231,
+                  "endLine": 212,
                   "endColumn": 44
                 }
               }
@@ -3586,9 +2833,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 250,
+                  "startLine": 232,
                   "startColumn": 29,
-                  "endLine": 250,
+                  "endLine": 232,
                   "endColumn": 31
                 }
               }
@@ -3597,9 +2844,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 253,
+                  "startLine": 235,
                   "startColumn": 33,
-                  "endLine": 253,
+                  "endLine": 235,
                   "endColumn": 35
                 }
               }
@@ -3608,9 +2855,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 255,
+                  "startLine": 237,
                   "startColumn": 37,
-                  "endLine": 255,
+                  "endLine": 237,
                   "endColumn": 44
                 }
               }
@@ -3619,9 +2866,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 274,
+                  "startLine": 256,
                   "startColumn": 29,
-                  "endLine": 274,
+                  "endLine": 256,
                   "endColumn": 31
                 }
               }
@@ -3630,9 +2877,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 277,
+                  "startLine": 259,
                   "startColumn": 33,
-                  "endLine": 277,
+                  "endLine": 259,
                   "endColumn": 35
                 }
               }
@@ -3641,9 +2888,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 279,
+                  "startLine": 261,
                   "startColumn": 37,
-                  "endLine": 279,
+                  "endLine": 261,
                   "endColumn": 44
                 }
               }
@@ -3652,9 +2899,9 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 301,
+                  "startLine": 280,
                   "startColumn": 29,
-                  "endLine": 301,
+                  "endLine": 280,
                   "endColumn": 31
                 }
               }
@@ -3663,9 +2910,42 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 303,
+                  "startLine": 283,
                   "startColumn": 33,
-                  "endLine": 303,
+                  "endLine": 283,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 285,
+                  "startColumn": 37,
+                  "endLine": 285,
+                  "endColumn": 44
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 307,
+                  "startColumn": 29,
+                  "endLine": 307,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 309,
+                  "startColumn": 33,
+                  "endLine": 309,
                   "endColumn": 40
                 }
               }
@@ -3674,10 +2954,21 @@
               "physicalLocation": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 322,
+                  "startLine": 328,
                   "startColumn": 17,
-                  "endLine": 322,
+                  "endLine": 328,
                   "endColumn": 22
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 333,
+                  "startColumn": 54,
+                  "endLine": 333,
+                  "endColumn": 55
                 }
               }
             }
@@ -3715,6 +3006,7 @@
               "33": "+3 (incl 2 for nesting)",
               "34": "+4 (incl 3 for nesting)",
               "35": "+2 (incl 1 for nesting)",
+              "36": "+3 (incl 2 for nesting)",
               "4": "+1",
               "5": "+3 (incl 2 for nesting)",
               "6": "+4 (incl 3 for nesting)",
@@ -3722,6 +3014,174 @@
               "8": "+1",
               "9": "+1"
             }
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 33,
+                  "endLine": 53,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1155",
+          "level": "warning",
+          "message": "Use '.Any()' to test whether this 'IEnumerable<siscointBKII.Models.tmp_excel_bco_agrario>' is empty or not.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 33,
+                  "endLine": 53,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2589",
+          "level": "warning",
+          "message": "Change this condition so that it does not always evaluate to 'true'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 24,
+                  "endLine": 64,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable '_bco_agrario'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ExcelBcoAgrearioController.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 45,
+                  "endLine": 51,
+                  "endColumn": 93
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 79,
+                  "endLine": 71,
+                  "endColumn": 80
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 80,
+                  "endLine": 102,
+                  "endColumn": 81
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'area_ccostos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 47,
+                  "endLine": 66,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'area_ccostos_'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 47,
+                  "endLine": 97,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
           }
         },
         {
@@ -3733,10 +3193,1008 @@
               "resultFile": {
                 "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
                 "region": {
-                  "startLine": 54,
+                  "startLine": 60,
                   "startColumn": 21,
-                  "endLine": 54,
+                  "endLine": 60,
                   "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 21,
+                  "endLine": 146,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/LoginController.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 17,
+                  "endLine": 144,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'usuariospermiso'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/ViewsController.cs",
+                "region": {
+                  "startLine": 235,
+                  "startColumn": 17,
+                  "endLine": 235,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 232,
+                  "startColumn": 23,
+                  "endLine": 232,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 243,
+                  "startColumn": 17,
+                  "endLine": 243,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 248,
+                  "startColumn": 21,
+                  "endLine": 248,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 255,
+                  "startColumn": 29,
+                  "endLine": 255,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 258,
+                  "startColumn": 33,
+                  "endLine": 258,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 266,
+                  "startColumn": 25,
+                  "endLine": 266,
+                  "endColumn": 30
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 276,
+                  "startColumn": 17,
+                  "endLine": 276,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 276,
+                  "startColumn": 40,
+                  "endLine": 276,
+                  "endColumn": 42
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 280,
+                  "startColumn": 17,
+                  "endLine": 280,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 285,
+                  "startColumn": 13,
+                  "endLine": 285,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 290,
+                  "startColumn": 50,
+                  "endLine": 290,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+3 (incl 2 for nesting)",
+              "3": "+4 (incl 3 for nesting)",
+              "4": "+3 (incl 2 for nesting)",
+              "5": "+1",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+2 (incl 1 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosConreoller.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 13,
+                  "endLine": 44,
+                  "endColumn": 14
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 30,
+                  "endLine": 75,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 17,
+                  "endLine": 82,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 106,
+                  "endLine": 84,
+                  "endColumn": 108
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 21,
+                  "endLine": 86,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 25,
+                  "endLine": 88,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 92,
+                  "startColumn": 25,
+                  "endLine": 92,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 25,
+                  "endLine": 96,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 25,
+                  "endLine": 100,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 25,
+                  "endLine": 104,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 25,
+                  "endLine": 108,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 21,
+                  "endLine": 116,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 25,
+                  "endLine": 124,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 25,
+                  "endLine": 128,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 25,
+                  "endLine": 132,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 136,
+                  "startColumn": 25,
+                  "endLine": 136,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 25,
+                  "endLine": 140,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 25,
+                  "endLine": 144,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 159,
+                  "startColumn": 13,
+                  "endLine": 159,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/permisos_usuIIController.cs",
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 50,
+                  "endLine": 165,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+3 (incl 2 for nesting)",
+              "11": "+1",
+              "12": "+3 (incl 2 for nesting)",
+              "13": "+1",
+              "14": "+3 (incl 2 for nesting)",
+              "15": "+1",
+              "16": "+1",
+              "17": "+2 (incl 1 for nesting)",
+              "2": "+2 (incl 1 for nesting)",
+              "3": "+3 (incl 2 for nesting)",
+              "4": "+1",
+              "5": "+3 (incl 2 for nesting)",
+              "6": "+1",
+              "7": "+3 (incl 2 for nesting)",
+              "8": "+1",
+              "9": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "S2486",
+          "level": "warning",
+          "message": "Handle the exception or explain in a comment why it can be ignored.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosConreoller.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 13,
+                  "endLine": 44,
+                  "endColumn": 14
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 298,
+                  "startColumn": 23,
+                  "endLine": 298,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 309,
+                  "startColumn": 17,
+                  "endLine": 309,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 314,
+                  "startColumn": 21,
+                  "endLine": 314,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 321,
+                  "startColumn": 29,
+                  "endLine": 321,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 324,
+                  "startColumn": 33,
+                  "endLine": 324,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 332,
+                  "startColumn": 25,
+                  "endLine": 332,
+                  "endColumn": 30
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 342,
+                  "startColumn": 17,
+                  "endLine": 342,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 342,
+                  "startColumn": 44,
+                  "endLine": 342,
+                  "endColumn": 46
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 346,
+                  "startColumn": 17,
+                  "endLine": 346,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 351,
+                  "startColumn": 13,
+                  "endLine": 351,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/EntradasController.cs",
+                "region": {
+                  "startLine": 356,
+                  "startColumn": 50,
+                  "endLine": 356,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+3 (incl 2 for nesting)",
+              "3": "+4 (incl 3 for nesting)",
+              "4": "+3 (incl 2 for nesting)",
+              "5": "+1",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+2 (incl 1 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'nombreCapa'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 24,
+                  "endLine": 123,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'EsEditar'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
+                "region": {
+                  "startLine": 157,
+                  "startColumn": 21,
+                  "endLine": 157,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'nombreCapa'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/UsuariosController.cs",
+                "region": {
+                  "startLine": 167,
+                  "startColumn": 24,
+                  "endLine": 167,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 31,
+                  "endLine": 168,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 13,
+                  "endLine": 174,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 17,
+                  "endLine": 180,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 21,
+                  "endLine": 182,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 21,
+                  "endLine": 190,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 196,
+                  "startColumn": 29,
+                  "endLine": 196,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 198,
+                  "startColumn": 33,
+                  "endLine": 198,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+3 (incl 2 for nesting)",
+              "3": "+3 (incl 2 for nesting)",
+              "4": "+4 (incl 3 for nesting)",
+              "5": "+5 (incl 4 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'cadena_conexion'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 20,
+                  "endLine": 144,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'tipoPedido'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 24,
+                  "endLine": 149,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'pedidosAdd'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 25,
+                  "endLine": 153,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'detallePedidos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 154,
+                  "startColumn": 38,
+                  "endLine": 154,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'Objetos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 470,
+                  "startColumn": 26,
+                  "endLine": 470,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 467,
+                  "startColumn": 20,
+                  "endLine": 467,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1168",
+          "level": "warning",
+          "message": "Return an empty collection instead of null.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 506,
+                  "startColumn": 21,
+                  "endLine": 506,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'Objetos'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 484,
+                  "startColumn": 26,
+                  "endLine": 484,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/busquedaRapidaController.cs",
+                "region": {
+                  "startLine": 481,
+                  "startColumn": 20,
+                  "endLine": 481,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'creoDetallePedido'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/GITEA/siscointBKII/siscointBKII/Controllers/PedidosController.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 29,
+                  "endLine": 186,
+                  "endColumn": 46
                 }
               }
             }
@@ -3988,6 +4446,22 @@
             ]
           }
         },
+        "S2077": {
+          "id": "S2077",
+          "shortDescription": "Formatting SQL queries is security-sensitive",
+          "fullDescription": "Formatted SQL queries can be difficult to maintain, debug and can increase the risk of SQL injection when concatenating untrusted values into the query. However, this rule doesn’t detect SQL injections (unlike rule {rule:csharpsquid:S3649}), the goal is only to highlight complex/formatted queries.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2077",
+          "properties": {
+            "category": "Major Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
         "S2486": {
           "id": "S2486",
           "shortDescription": "Generic exceptions should not be ignored",
@@ -4000,6 +4474,23 @@
             "tags": [
               "C#",
               "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2589": {
+          "id": "S2589",
+          "shortDescription": "Boolean expressions should not be gratuitous",
+          "fullDescription": "If a boolean expression doesn’t change the evaluation of the condition, then it is entirely unnecessary, and can be removed. If it is gratuitous because it does not match the programmer’s intent, then it’s a bug and the expression should be fixed.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2589",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
               "SonarWay"
             ]
           }

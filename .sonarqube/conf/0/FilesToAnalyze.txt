@@ -4,6 +4,7 @@ E:\GITEA\siscointBKII\siscointBKII\Controllers\busquedaRapidaController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\CentroCostoController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\empleadoController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\EntradasController.cs
+E:\GITEA\siscointBKII\siscointBKII\Controllers\ExcelBcoAgrearioController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\LoginController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\PedidosConreoller.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\PedidosController.cs
@@ -12,6 +13,7 @@ E:\GITEA\siscointBKII\siscointBKII\Controllers\UsuariosController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\ViewsController.cs
 E:\GITEA\siscointBKII\siscointBKII\Controllers\WeatherForecastController.cs
 E:\GITEA\siscointBKII\siscointBKII\General.cs
+E:\GITEA\siscointBKII\siscointBKII\ModelosQ\listar_menu_padre.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\area_ccosto.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\articulos.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\articulosBusqueda.cs
@@ -34,6 +36,7 @@ E:\GITEA\siscointBKII\siscointBKII\Models\directivos.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\empleado.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\empresa.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\entregas.cs
+E:\GITEA\siscointBKII\siscointBKII\Models\excel_bco_agrario.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\iva.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\jefes.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\objeto.cs
@@ -46,6 +49,7 @@ E:\GITEA\siscointBKII\siscointBKII\Models\tipoEntrega.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\tipo_articulo.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\tipo_reporte.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\tipo_usuario.cs
+E:\GITEA\siscointBKII\siscointBKII\Models\tmp_excel_bco_agrario.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\UserLogin.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\usuario.cs
 E:\GITEA\siscointBKII\siscointBKII\Models\UsuarioModel.cs

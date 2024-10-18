@@ -1,22 +1,33 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Wordprocessing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Graph;
+using siscointBKII.ModelosQ;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace siscointBKII
 {
     public class General
     {
-        
-       
+
+        private static string cadena_conexion_1 = "Data Source=sql5108.site4now.net;Initial Catalog=DB_A642ED_prueba; user id=DB_A642ED_prueba_admin;password=S1st3m##C4cH0n;MultipleActiveResultSets=True;";
+        private static string cadena_conexion_2 = "Data Source=AF1002522FTTHBG\\SQLEXPRESS;Initial Catalog=SISCOINT_PRUEBAS_II;Integrated Security=True;";
         //public static string EncriptarPassword(string cadenaNombre, string password)
         //{
         //    byte[] bytesToBeEncrypted = Encoding.UTF8.GetBytes(cadenaNombre);
@@ -69,7 +80,7 @@ namespace siscointBKII
         //        {
         //            myRijndael.GenerateKey();
         //            myRijndael.GenerateIV();
-                    
+
 
         //            byte[] encrypted = Convert.FromBase64String(passEncript);
         //            Encrip_pass = DesencriptarStringFromBytes(encrypted, myRijndael.Key, myRijndael.IV);
@@ -332,9 +343,62 @@ namespace siscointBKII
             }
         }
 
+
+        public static string Decryption(string srtText)
+        {
+            //MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCPP+NlfOS/cYdJ1dkbg3EMGY/8JJgl2Op89RNUIB6zJ8O3vD1dwmR4f/zIYx9tOOMgMxm3LmlhoF2LoYuC0mUuPcnXbgY2VPVYWC73DE82Ejn31YDGz79K9ufmPiyT6Sxnx6V0PQFJIQf1SMQaSoaKdUe9BSIn0ODKC1XiBJBefwIDAQAB
+            var publicKey = "<RSAKeyValue><Modulus>/MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCPP+NlfOS/cYdJ1dkbg3EMGY/8JJgl2Op89RNUIB6zJ8O3vD1dwmR4f/zIYx9tOOMgMxm3LmlhoF2LoYuC0mUuPcnXbgY2VPVYWC73DE82Ejn31YDGz79K9ufmPiyT6Sxnx6V0PQFJIQf1SMQaSoaKdUe9BSIn0ODKC1XiBJBefwIDAQAB</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+            //var publicKey = "<RSAKeyValue><Modulus>21wEnTU+mcD2w0Lfo1Gv4rtcSWsQJQTNa6gio05AOkV/Er9w3Y13Ddo5wGtjJ19402S71HUeN0vbKILLJdRSES5MHSdJPSVrOqdrll/vLXxDxWs/U0UT1c8u6k/Ogx9hTtZxYwoeYqdhDblof3E75d9n2F0Zvf6iTb4cI7j6fMs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+            var testData = Encoding.UTF8.GetBytes(srtText);
+            using (var rsa = new RSACryptoServiceProvider(1024))
+            {
+                try
+                {
+                    var base64Encrypted = srtText;
+                    rsa.FromXmlString(publicKey);
+                    var resultBytes = Convert.FromBase64String(base64Encrypted);
+                    var decryptedBytes = rsa.Decrypt(resultBytes, true);
+                    var decryptedData = Encoding.UTF8.GetString(decryptedBytes);
+                    return decryptedData.ToString();
+                }
+                finally
+                {
+                    rsa.PersistKeyInCsp = false;
+                }
+            }
+        }
+
+        public static string DecryptionV2(string textExcrypt)
+        {
+            string decryptedDataS = "";
+            try 
+            {
+                ASCIIEncoding ByteConverter = new ASCIIEncoding();
+
+                string dataString = textExcrypt;
+                byte[] dataToEncrypt = ByteConverter.GetBytes(dataString);
+                byte[] encryptedData;
+                byte[] decryptedData;
+
+                RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider();
+                encryptedData = RSAalg.Encrypt(dataToEncrypt, false);
+                decryptedData = RSAalg.Decrypt(encryptedData, false);
+                decryptedDataS = ByteConverter.GetString(decryptedData);
+            }
+            catch(CryptographicException e)
+            {
+                string excepMsj = e.Message;
+            }
+
+            
+            return decryptedDataS;
+        }
+
+
+
         public static void CrearLogError(string tipo, string entidad, string mensaje, string source, string stacktrace, string targetsite, string conexion)
         {
-            using(SqlConnection connection = new SqlConnection(conexion))
+            using (SqlConnection connection = new SqlConnection(conexion))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -356,7 +420,7 @@ namespace siscointBKII
                     }
                     catch (SqlException)
                     {
-                        
+
                     }
                     finally
                     {
@@ -365,6 +429,8 @@ namespace siscointBKII
                 }
             }
         }
+
+
 
         public static void EjecutarProcedimientoAlmacenado_validatePresupuesto(string nombre_procedimiento, string conexion, string parametro)
         {
@@ -393,6 +459,662 @@ namespace siscointBKII
             }
         }
 
-       
+        public static async Task<string> crearEmpleadosV2(string cedula, string nombres, string cargo, string nombre_empresa ,  string contrato, string conexion)
+        {
+            string msj = "";
+            string[] result = nombres.Split(" ");
+            string primer_nombre = "";
+            string segundo_nombre = "";
+            string primer_apellido = "";
+            string segundo_apellido = "";
+            if(result.Length >= 4)
+            {
+               primer_nombre = result[0];
+               segundo_nombre = result[1];
+               primer_apellido = result[2];
+               segundo_apellido = result[3];
+            }
+            else
+            {
+                primer_nombre = result[0];
+                
+                primer_apellido = result[1];
+                segundo_apellido = result[2];
+            }
+            //valido el nombre de la empresa
+            Int32 codigo_empresa = get_codigo_empresa(nombre_empresa,conexion);
+
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into empleado (cedula_emp,nombre,snombre,ppellido,spellido,area,cargo,estado,permiso,ccosto,empresa,correo) values(@cedula_emp,@nombre,@snombre,@ppellido,@spellido,@area,@cargo,@estado,@permiso,@ccosto,@empresa,@correo)";
+                    command.Parameters.AddWithValue("@cedula_emp", cedula);
+                    command.Parameters.AddWithValue("@nombre", primer_nombre);
+                    command.Parameters.AddWithValue("@snombre", segundo_nombre);
+                    command.Parameters.AddWithValue("@ppellido", primer_apellido);
+                    command.Parameters.AddWithValue("@spellido", segundo_apellido);
+                    command.Parameters.AddWithValue("@area", cargo);
+                    command.Parameters.AddWithValue("@cargo", cargo);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    command.Parameters.AddWithValue("@permiso", 0);
+                    command.Parameters.AddWithValue("@ccosto", 0);
+                    command.Parameters.AddWithValue("@empresa", codigo_empresa);
+                    command.Parameters.AddWithValue("@correo", "");
+                    try
+                    {
+                        connection.Open();
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            return  msj;
+        }
+
+        public static async Task<string> crearEmpleadosV3(string cedula, 
+                                                          string nombres, 
+                                                          string area,
+                                                          string cargo, 
+                                                          
+                                                          string contrato,
+                                                          Int32 ccosto,
+                                                          Int32 cod_empresa,
+                                                          string correo,
+                                                          
+                                                          string conexion)
+        {
+            string msj = "";
+            string[] result = nombres.Split(" ");
+            string primer_nombre = "";
+            string segundo_nombre = "";
+            string primer_apellido = "";
+            string segundo_apellido = "";
+            if (result.Length >= 4)
+            {
+                primer_nombre = result[0];
+                segundo_nombre = result[1];
+                primer_apellido = result[2];
+                segundo_apellido = result[3];
+            }
+            else if(result.Length == 3)
+            {
+                primer_nombre = result[0];
+
+                primer_apellido = result[1];
+                segundo_apellido = result[2];
+            }else if(result.Length == 2)
+            {
+                primer_nombre = result[0];
+                primer_apellido = result[1];
+            }
+            //valido el nombre de la empresa
+            //Int32 codigo_empresa = get_codigo_empresa(nombre_empresa, conexion);
+
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into empleado (cedula_emp," +
+                                                                "nombre," +
+                                                                "snombre," +
+                                                                "ppellido," +
+                                                                "spellido," +
+                                                                "area," +
+                                                                "cargo," +
+                                                                "contrato,"+
+                                                                "estado," +
+                                                                "permiso," +
+                                                                "ccosto," +
+                                                                "empresa," +
+                                                                "correo) " +
+                                                                "values(" +
+                                                                "@cedula_emp," +
+                                                                "@nombre," +
+                                                                "@snombre," +
+                                                                "@ppellido," +
+                                                                "@spellido," +
+                                                                "@area," +
+                                                                "@cargo," +
+                                                                "@contrato,"+
+                                                                "@estado," +
+                                                                "@permiso," +
+                                                                "@ccosto," +
+                                                                "@empresa," +
+                                                                "@correo)";
+                    command.Parameters.AddWithValue("@cedula_emp", cedula);
+                    command.Parameters.AddWithValue("@nombre", primer_nombre);
+                    command.Parameters.AddWithValue("@snombre", segundo_nombre);
+                    command.Parameters.AddWithValue("@ppellido", primer_apellido);
+                    command.Parameters.AddWithValue("@spellido", segundo_apellido);
+                    command.Parameters.AddWithValue("@area", area);
+                    command.Parameters.AddWithValue("@cargo", cargo);
+                    command.Parameters.AddWithValue("@contrato", contrato);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    command.Parameters.AddWithValue("@permiso", 0);
+                    command.Parameters.AddWithValue("@ccosto", ccosto);
+                    command.Parameters.AddWithValue("@empresa", cod_empresa);
+                    command.Parameters.AddWithValue("@correo", correo);
+                    try
+                    {
+                        connection.Open();
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            return msj;
+        }
+
+        public static int get_codigo_empresa(string nombre_empresa, string conexion)
+        {
+            int codigo_empresa = 0;
+            string[] empresa_nom = nombre_empresa.Split(" ");
+            string nombre_1 = empresa_nom[0];
+            string query = "select isnull(id,2) as codigo_empresa from empresa where nombre like '%"+ nombre_1 + "%'";
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader srd = cmd.ExecuteReader())
+                    {
+                        while (srd.Read()) 
+                        {
+                            codigo_empresa = Convert.ToInt32(srd["codigo_empresa"]);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return codigo_empresa;
+        }
+
+        public static void CrearEmpleados(string cedula,
+                                          string primer_nombre,
+                                          string segundo_nombre,
+                                          string primer_apellido,
+                                          string segundo_apellido,
+                                          string cargo,
+                                          string conexion)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into empleado (cedula_emp,nombre,snombre,ppellido,spellido,area,cargo,estado,permiso,ccosto,empresa,correo) values(@cedula_emp,@nombre,@snombre,@ppellido,@spellido,@area,@cargo,@estado,@permiso,@ccosto,@empresa,@correo)";
+                    command.Parameters.AddWithValue("@cedula_emp", cedula);
+                    command.Parameters.AddWithValue("@nombre", primer_nombre);
+                    command.Parameters.AddWithValue("@snombre", segundo_nombre);
+                    command.Parameters.AddWithValue("@ppellido", primer_apellido);
+                    command.Parameters.AddWithValue("@spellido", segundo_apellido);
+                    command.Parameters.AddWithValue("@area", "");
+                    command.Parameters.AddWithValue("@cargo", cargo);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    command.Parameters.AddWithValue("@permiso", 0);
+                    command.Parameters.AddWithValue("@ccosto", 0);
+                    command.Parameters.AddWithValue("@empresa", 2);
+                    command.Parameters.AddWithValue("@correo", "");
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public static void crearPeriodo(string periodo, string conexion)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into liq_periodo_comision_v2 (periodo, estado, fecha_creacion, EsPublicado, EsCerrado) values(@periodo, @estado, @fecha_creacion, @EsPublicado, @EsCerrado)";
+                    command.Parameters.AddWithValue("@periodo", periodo);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    command.Parameters.AddWithValue("@fecha_creacion", DateTime.Now);
+                    command.Parameters.AddWithValue("@EsPublicado", 0);
+                    command.Parameters.AddWithValue("@EsCerrado", 0);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public static void crearLoteImporte(Int64 consecutivo_lote, string tipo_importe, string ruta, string usuario, string conexion)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into lote_importe (consecutivo_lote, tipo_importe, ruta_archivo,usuario,estado,fecha_creacion) values(@consecutivo_lote, @tipo_importe, @ruta,@usuario,@estado, @fecha_creacion)";
+                    command.Parameters.AddWithValue("@consecutivo_lote", consecutivo_lote);
+                    command.Parameters.AddWithValue("@tipo_importe", tipo_importe);
+                    command.Parameters.AddWithValue("@ruta", ruta);
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    command.Parameters.AddWithValue("@fecha_creacion", DateTime.Now);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public static void recalcular_subtotales(string cedula_asesor, string periodo, string conexion)
+        {
+            string query = "";
+            string query_2 = "";
+            double valor_total = 0;
+            query = "select isnull(sum((total_valor_mega_1+" +
+                                      " total_valor_mega_2+ " +
+                                      " total_valor_mega_3+" +
+                                      " total_valor_mega_4+" +
+                                      " total_valor_mega_5+" +
+                                      " total_valor_mega_6+" +
+                                      " total_valor_duos +" +
+                                      " total_valor_naked +" +
+                                      " total_valor_trios +" +
+                                      " total_migracion + " +
+                                      " total_plan_movil +" +
+                                      " total_valor_preferencial +" +
+                                      " total_valor_dedicado +" +
+                                      " total_venta_base +" +
+                                      " total_venta_c2c )" +
+                                      
+                                      " -" +
+                                      " (total_nunca_pago_movil)+ " +
+                                      " (total_otros_conceptos)),0) as total " +
+                                      " from liq_comision_asesor " +
+                                      " where cedula_asesor = '"+ cedula_asesor + "' and periodo = '"+ periodo + "' and estado = 1";
+
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            valor_total = Convert.ToDouble(sdr["total"]);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            //ahora despues del calculo actualizamos
+            query_2 = "update liq_comision_asesor set " +
+                      "sub_total_comision = @valor_total ," +
+                      "total_comision = @valor_total " +
+                      "where cedula_asesor = @cedula_asesor " +
+                      "and periodo = @periodo and estado = 1";
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = query_2;
+                    command.Parameters.AddWithValue("@valor_total", valor_total);
+                    command.Parameters.AddWithValue("@cedula_asesor", cedula_asesor);
+                    command.Parameters.AddWithValue("@periodo", periodo);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public static void crearDataValidoProceso(string proceso, Int32 valor,Int32 consecutivo_lote,string nombre_tabla, string usuario, string conexion)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into data_valido_proceso (proceso,cantidad,estado,usuario,fecha_inicio_proceso,consecutivo_lote,nombre_tabla) values(@proceso,@cantidad,@estado,@usuario,@fecha_inicio_proceso,@consecutivo_lote,@nombre_tabla)";
+                    command.Parameters.AddWithValue("@proceso", proceso);
+                    command.Parameters.AddWithValue("@cantidad", valor);
+                    command.Parameters.AddWithValue("@estado", 0);
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@fecha_inicio_proceso", DateTime.Now);
+                    command.Parameters.AddWithValue("@consecutivo_lote", consecutivo_lote);
+                    command.Parameters.AddWithValue("@nombre_tabla", nombre_tabla);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+        public static void crearImprimeMensajeLog(string mensaje, string proceso, string conexion)
+        {
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "insert into data_imprime_mensaje (mensaje,proceso,fecha,estado) values(@mensaje,@proceso,@fecha,@estado)";
+                    command.Parameters.AddWithValue("@mensaje", mensaje);
+                    command.Parameters.AddWithValue("@proceso", proceso);
+                    command.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    command.Parameters.AddWithValue("@estado", 1);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+        public static Boolean enviarCorreo(string subjectMensaje , string cuerpoMensaje, string correo_saliente, string cadena_conexion)
+        {
+            Boolean Envio = false;
+            string outMss = "";
+            //var fromAddress = new MailAddress("antoniojlfz2010@gmail.com");
+            //var toAddres = new MailAddress("alinero@optecom.com.co");
+            string correo_entrante = getParametroVariable("correo_entrante", cadena_conexion);
+            string contrasena_entrante = getParametroVariable("contrasena_entrante", cadena_conexion);
+            string servidor_entrante = getParametroVariable("servidor_entrante", cadena_conexion);
+            string puerto_entrante = getParametroVariable("puerto_entrante", cadena_conexion);
+            string fromAddress = correo_entrante;
+            string toAddres = correo_saliente;
+            string fromPassword = contrasena_entrante;
+            //string subjetc = subjectMensaje;
+            //string body = cuerpoMensaje;
+
+            var smtp = new SmtpClient
+            {
+                Host = servidor_entrante,
+                Port = Convert.ToInt32(puerto_entrante),
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress, fromPassword)
+            };
+
+            //using (var message = new MailMessage(fromAddress, toAddres)
+            //{
+            //    Subject = subjetc,
+            //    Body = body
+            //})
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(fromAddress);
+            mail.Sender = new MailAddress(toAddres);
+            mail.To.Add(toAddres);
+            mail.IsBodyHtml = true;
+            mail.Subject = subjectMensaje;
+            mail.Body = cuerpoMensaje;
+            try{
+                smtp.Send(mail);
+                Envio = true;
+            }
+            catch (SmtpException e)
+            {
+                outMss = e.Message;
+            }
+            return Envio;
+        }
+
+        public static Boolean EnviarCorreoAuth(string subjectMensaje, string cuerpoMensaje, string correo_saliente, string cadena_conexion, out string outMss)
+        {
+            outMss = "";
+            Boolean Envio = false;
+            string correo_entrante = getParametroVariable("correo_envios_login", cadena_conexion);
+            string contrasena_entrante = getParametroVariable("contrasena_envios_login", cadena_conexion);
+            string servidor_entrante = getParametroVariable("servidor_entrante_login", cadena_conexion);
+            string puerto_entrante = getParametroVariable("puerto_entrante_login", cadena_conexion);
+            string fromAddress = correo_entrante;
+            string toAddres = correo_saliente;
+            string fromPassword = contrasena_entrante;
+            var smtp = new SmtpClient
+            {
+                Host = servidor_entrante,
+                Port = Convert.ToInt32(puerto_entrante),
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress, fromPassword)
+            };
+
+            //using (var message = new MailMessage(fromAddress, toAddres)
+            //{
+            //    Subject = subjetc,
+            //    Body = body
+            //})
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(fromAddress);
+            mail.Sender = new MailAddress(toAddres);
+            mail.To.Add(toAddres);
+            mail.IsBodyHtml = true;
+            mail.Subject = subjectMensaje;
+            mail.Body = cuerpoMensaje;
+            try
+            {
+                smtp.Send(mail);
+                Envio = true;
+            }
+            catch (SmtpException e)
+            {
+                outMss = e.Message;
+            }
+            return Envio;
+            
+        }
+
+        public static string getNombreCompletoEmpleado(string cedula_empleado, string conexion)
+        {
+            string nombre_completo = "";
+            string query = "select concat(e.nombre,' ',e.snombre,' ',e.ppellido,' ',e.spellido) as nombreCompleto " +
+                           " from empleado e where e.cedula_emp = '"+cedula_empleado+"'";
+
+
+            using(SqlConnection con = new SqlConnection(conexion))
+            {
+                using(SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using(SqlDataReader srd = cmd.ExecuteReader())
+                    {
+                        while(srd.Read())
+                        {
+                            nombre_completo = srd["nombreCompleto"] + "";
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return nombre_completo;
+        }
+        public static string getNombreTipoEsquema(Int32 codigo_tipo_esquema, string conexion)
+        {
+            string nombre_tipo_esquema = "";
+            string query = "select esquema from liq_tipo_esquema where codigo_valor = '"+codigo_tipo_esquema+"'";
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader srd = cmd.ExecuteReader())
+                    {
+                        while (srd.Read())
+                        {
+                            nombre_tipo_esquema = srd["esquema"] + "";
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return nombre_tipo_esquema;
+        }
+
+        public static List<listar_tmp_solicitud_np> ListarPendientesNpgroup(string periodo, string tipo_operacion ,string conexion)
+        {
+            
+            List<listar_tmp_solicitud_np> _listar_pendientes_nunca_pagos_g = new List<listar_tmp_solicitud_np>();
+          
+            string query = "select count(*) as total, cedula_asesor, periodo_np from liq_tmp_solicitud_np where periodo_cm = '" + periodo + "' group by cedula_asesor, periodo_np";
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            _listar_pendientes_nunca_pagos_g.Add(new listar_tmp_solicitud_np
+                            {
+                                TOTAL = Convert.ToInt32(sdr["total"]),
+                                CEDULA_ASESOR = sdr["cedula_asesor"] + "",
+                                PERIODO_NP = sdr["periodo_np"] + ""
+                            });
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return _listar_pendientes_nunca_pagos_g;
+        }
+
+        public static string getParametroVariable(string nombre_parametro, string cadena_conexion)
+        {
+            string valor_parametro = "";
+            string query = "select valor_variable from variable where codigo_variable = '"+ nombre_parametro + "'";
+            using (SqlConnection con = new SqlConnection(cadena_conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader srd = cmd.ExecuteReader())
+                    {
+                        while (srd.Read())
+                        {
+                            valor_parametro = srd["valor_variable"] + "";
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return valor_parametro;
+        }
+
+        public static void recalcular_saldos(string periodo, string conexion)
+        {
+            SqlConnection conex = null;
+            SqlDataReader rd = null;
+            try
+            {
+                conex = new SqlConnection(conexion);
+                conex.Open();
+                SqlCommand cmd = new SqlCommand("dbo.recalcular_saldos_comision", conex);
+                cmd.Parameters.AddWithValue("@periodo", periodo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 600;
+                rd = cmd.ExecuteReader();
+            }
+            finally
+            {
+                if (conex != null)
+                {
+                    conex.Close();
+                }
+                else
+                {
+                    conex.Close();
+                }
+            }
+        }
+
     }
+
+    
 }

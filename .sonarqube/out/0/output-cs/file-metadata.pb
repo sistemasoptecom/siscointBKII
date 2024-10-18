@@ -4,7 +4,8 @@ DE:\GITEA\siscointBKII\siscointBKII\Controllers\ArticuloController.csutf-8S
 JE:\GITEA\siscointBKII\siscointBKII\Controllers\busquedaRapidaController.csutf-8P
 GE:\GITEA\siscointBKII\siscointBKII\Controllers\CentroCostoController.csutf-8M
 DE:\GITEA\siscointBKII\siscointBKII\Controllers\empleadoController.csutf-8M
-DE:\GITEA\siscointBKII\siscointBKII\Controllers\EntradasController.csutf-8J
+DE:\GITEA\siscointBKII\siscointBKII\Controllers\EntradasController.csutf-8U
+LE:\GITEA\siscointBKII\siscointBKII\Controllers\ExcelBcoAgrearioController.csutf-8J
 AE:\GITEA\siscointBKII\siscointBKII\Controllers\LoginController.csutf-8L
 CE:\GITEA\siscointBKII\siscointBKII\Controllers\PedidosConreoller.csutf-8L
 CE:\GITEA\siscointBKII\siscointBKII\Controllers\PedidosController.csutf-8S
@@ -12,7 +13,8 @@ JE:\GITEA\siscointBKII\siscointBKII\Controllers\permisos_usuIIController.csutf
 DE:\GITEA\siscointBKII\siscointBKII\Controllers\UsuariosController.csutf-8J
 AE:\GITEA\siscointBKII\siscointBKII\Controllers\ViewsController.csutf-8T
 KE:\GITEA\siscointBKII\siscointBKII\Controllers\WeatherForecastController.csutf-86
--E:\GITEA\siscointBKII\siscointBKII\General.csutf-8A
+-E:\GITEA\siscointBKII\siscointBKII\General.csutf-8I
+@E:\GITEA\siscointBKII\siscointBKII\ModelosQ\listar_menu_padre.csutf-8A
 8E:\GITEA\siscointBKII\siscointBKII\Models\area_ccosto.csutf-8?
 6E:\GITEA\siscointBKII\siscointBKII\Models\articulos.csutf-8G
 >E:\GITEA\siscointBKII\siscointBKII\Models\articulosBusqueda.csutf-8K
@@ -34,7 +36,8 @@ AE:\GITEA\siscointBKII\siscointBKII\Models\detalle_devolucionII.csutf-8G
 7E:\GITEA\siscointBKII\siscointBKII\Models\directivos.csutf-8>
 5E:\GITEA\siscointBKII\siscointBKII\Models\empleado.csutf-8=
 4E:\GITEA\siscointBKII\siscointBKII\Models\empresa.csutf-8>
-5E:\GITEA\siscointBKII\siscointBKII\Models\entregas.csutf-89
+5E:\GITEA\siscointBKII\siscointBKII\Models\entregas.csutf-8G
+>E:\GITEA\siscointBKII\siscointBKII\Models\excel_bco_agrario.csutf-89
 0E:\GITEA\siscointBKII\siscointBKII\Models\iva.csutf-8;
 2E:\GITEA\siscointBKII\siscointBKII\Models\jefes.csutf-8<
 3E:\GITEA\siscointBKII\siscointBKII\Models\objeto.csutf-8=
@@ -46,7 +49,8 @@ AE:\GITEA\siscointBKII\siscointBKII\Models\detalle_devolucionII.csutf-8G
 8E:\GITEA\siscointBKII\siscointBKII\Models\tipoEntrega.csutf-8C
 :E:\GITEA\siscointBKII\siscointBKII\Models\tipo_articulo.csutf-8B
 9E:\GITEA\siscointBKII\siscointBKII\Models\tipo_reporte.csutf-8B
-9E:\GITEA\siscointBKII\siscointBKII\Models\tipo_usuario.csutf-8?
+9E:\GITEA\siscointBKII\siscointBKII\Models\tipo_usuario.csutf-8K
+BE:\GITEA\siscointBKII\siscointBKII\Models\tmp_excel_bco_agrario.csutf-8?
 6E:\GITEA\siscointBKII\siscointBKII\Models\UserLogin.csutf-8=
 4E:\GITEA\siscointBKII\siscointBKII\Models\usuario.csutf-8B
 9E:\GITEA\siscointBKII\siscointBKII\Models\UsuarioModel.csutf-8H

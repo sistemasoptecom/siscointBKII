@@ -19,5 +19,7 @@ namespace siscointBKII.Models
         public int permiso { get; set; }
         public int ccosto { get; set; }
         public int empresa { get; set; }
+        public string correo { get; set; }
+        public string contrato { get; set; }
     }
 }

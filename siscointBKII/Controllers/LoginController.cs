@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using siscointBKII.Interfaces;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,19 @@ namespace siscointBKII.Controllers
     {
         public List<UsuariosModel> usuarios = new List<UsuariosModel>();
         private AplicationDbContext _context;
+        private readonly IRSAHelper RSAHelper;
         private IConfiguration _config;
-        public LoginController(IConfiguration config, AplicationDbContext context)
+        public LoginController(IConfiguration config, AplicationDbContext context, IRSAHelper rsaHelper)
         {
             _config = config;
             _context = context;
+            RSAHelper = rsaHelper;
         }
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Login([FromBody] UserLogin userLogin)
         {
+            General.crearImprimeMensajeLog("Entro a la Funcion", "Login", _config.GetConnectionString("conexion"));
             var user = Authenticate(userLogin);
             if(user == null)
                 return NotFound("User not found");
@@ -91,8 +95,9 @@ namespace siscointBKII.Controllers
             {
                 var st = new StackTrace();
                 var sf = st.GetFrame(1);
-
-                General.CrearLogError(sf.GetMethod().Name, "login", e.Message, _config.GetConnectionString("conexion"));
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message, e.Source, e.StackTrace, methodName, _config.GetConnectionString("conexion"));
             }
             return EsUsuarioValido;
         }
@@ -112,7 +117,7 @@ namespace siscointBKII.Controllers
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
                 _config["Jwt:Audience"], 
                 claims,
-                expires: DateTime.Now.AddMinutes(15),
+                expires: DateTime.Now.AddMinutes(180),
                 signingCredentials: crediales);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
@@ -125,16 +130,21 @@ namespace siscointBKII.Controllers
             string _nombre_usuario = "";
             string nombre_usuario = "";
             string nombreCapa = "";
+            string auxPassWord = "";
             try
             {
-                user = _context.usuario.FirstOrDefault(o => o.username == userLogin.Username);
+                //string usuario = General.DecryptionV2(userLogin.Username);
+                string usuario = RSAHelper.Decrypt(userLogin.Username);
+                
+                user = _context.usuario.FirstOrDefault(o => o.username == usuario);
                 string passwordHash = "";
                 if (user != null)
                 {
                     passwordHash = user.pssword;
                     _nombre_usuario = user.nombre_usuario;
+                    auxPassWord = RSAHelper.Decrypt(userLogin.Password);
                     nombre_usuario = System.Text.RegularExpressions.Regex.Replace(_nombre_usuario, @"\s", "");
-                    nombreCapa = "minombrees" + nombre_usuario + userLogin.Password;
+                    nombreCapa = "minombrees" + nombre_usuario + auxPassWord;
                 }
 
 
@@ -142,7 +152,8 @@ namespace siscointBKII.Controllers
                 passwordHash = General.descifrarTextoAES(passwordHash, nombreCapa, nombreCapa, "SHA1", 22, "1234567891234567", 128);
                 if (passwordHash != "")
                 {
-                    if(passwordHash.Contains(userLogin.Password))
+                    
+                    if (passwordHash.Contains(auxPassWord))
                     {
                         EsUsuarioValido = true;
                     }

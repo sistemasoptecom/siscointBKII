@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using siscointBKII.Models;
@@ -78,8 +79,8 @@ namespace siscointBKII.Controllers
             {
                 //DataTable dtt = (DataTable)JsonConvert.DeserializeObject(data);
                 string dat = System.Text.Json.JsonSerializer.Serialize(data);
-                List<permisos_usuII> permisos = JsonConvert.DeserializeObject<List<permisos_usuII>>(dat);
-                foreach(permisos_usuII permiso in permisos)
+                List<permisos_usuIII> permisos = JsonConvert.DeserializeObject<List<permisos_usuIII>>(dat);
+                foreach(permisos_usuIII permiso in permisos)
                 {
                     var dato = _context.permisos_usuIII.FirstOrDefault(x => x.id_view == permiso.id_view && x.usuario == permiso.usuario);
                     
@@ -173,5 +174,7 @@ namespace siscointBKII.Controllers
             var permisos = _context.permisos_usuIII.ToList();
             return permisos;
         }
+
+        
     }
 }

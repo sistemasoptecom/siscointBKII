@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Chilkat;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Graph;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using siscointBKII.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +29,18 @@ namespace siscointBKII.Controllers
         {
             _context = context;
             _config = config;
+        }
+        [HttpPost("getEmpleado")]
+        public IActionResult getEmpleado(dynamic data_recibe)
+        {
+            string cedula = "";
+            var dataJson = System.Text.Json.JsonSerializer.Serialize(data_recibe);
+            var datObject = JObject.Parse(dataJson);
+            cedula = Convert.ToString(datObject["cedula"]);
+            empleado _empleado_e = _context.empleado.Where(x => x.cedula_emp == cedula
+                                                           && x.estado == 1).FirstOrDefault();
+           
+            return Ok(_empleado_e);
         }
         [HttpGet("getEmpresas")]
         [Authorize]
@@ -94,7 +109,7 @@ namespace siscointBKII.Controllers
                 var sf = st.GetFrame(1);
                 MethodBase site = e.TargetSite;
                 string methodName = site == null ? null : site.Name;
-                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexionDbPruebas"));
             }
             return Ok(busqueda);
         }
@@ -116,7 +131,7 @@ namespace siscointBKII.Controllers
                 var sf = st.GetFrame(1);
                 MethodBase site = e.TargetSite;
                 string methodName = site == null ? null : site.Name;
-                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexionDbPruebas"));
             }
             return Ok(data);
         }
@@ -169,10 +184,63 @@ namespace siscointBKII.Controllers
                 var sf = st.GetFrame(1);
                 MethodBase site = e.TargetSite;
                 string methodName = site == null ? null : site.Name;
-                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexionDbPruebas"));
             }
 
             string json = JsonConvert.SerializeObject(new { Result = result, Mensaje = mensaje });
+            return Ok(json);
+        }
+
+        [HttpPost("agregarEmpleadosMasivos")]
+        [Authorize]
+        public async Task<IActionResult> agregarEmpleadosMasivos(dynamic data_recibe)
+        {
+            string resultado = "";
+            string base_ = "";
+            string json = "";
+            
+            List<temp_import_update_empleados_v1> _data_empleados = new List<temp_import_update_empleados_v1>();
+            try
+            {
+                var dataJson = System.Text.Json.JsonSerializer.Serialize(data_recibe);
+                var datObject = JObject.Parse(dataJson);
+                base_ = Convert.ToString(datObject["base"]);
+                
+                _data_empleados = JsonConvert.DeserializeObject<List<temp_import_update_empleados_v1>>(base_);
+                if (_data_empleados.Count > 0) 
+                {
+                    foreach (temp_import_update_empleados_v1 item in _data_empleados)
+                    {
+                        //validamos que la cedula no este
+                        empleado empleado_e = _context.empleado.Where(x => x.cedula_emp == item.Cedula).FirstOrDefault();
+                        if(empleado_e == null)
+                        {
+                            await General.crearEmpleadosV3(item.Cedula,
+                                                 item.NombreCompleto,
+                                                 item.Area,
+                                                 item.Cargo,
+                                                 item.Contrato,
+                                                 Convert.ToInt32(item.Centrodecostos),
+                                                 Convert.ToInt32(item.codEmpresa),
+                                                 item.CorreoElectronico,
+                                                 _config.GetConnectionString("conexionDbPruebas"));
+                        }
+                        
+                        //empleado empleado_e = new empleado();
+                        
+                    }
+                }
+                resultado = "PROCESADO DE FORMA CORRECTA";
+            }
+            catch (Exception e) 
+            {
+                var st = new StackTrace();
+                var sf = st.GetFrame(1);
+                MethodBase site = e.TargetSite;
+                string methodName = site == null ? null : site.Name;
+                General.CrearLogError(sf.GetMethod().Name, "agregarEmpleadosMasivos", e.Message, e.Source, e.StackTrace, methodName, _config.GetConnectionString("conexionDbPruebas"));
+            }
+            json = JsonConvert.SerializeObject(resultado);
             return Ok(json);
         }
 
@@ -192,7 +260,7 @@ namespace siscointBKII.Controllers
                 var sf = st.GetFrame(1);
                 MethodBase site = e.TargetSite;
                 string methodName = site == null ? null : site.Name;
-                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexion"));
+                General.CrearLogError(sf.GetMethod().Name, "empleado", e.Message,e.Source,e.StackTrace,methodName, _config.GetConnectionString("conexionDbPruebas"));
             }
 
             return EsValido;
